@@ -1,3 +1,4 @@
+import {mountHeroCharacter} from './character.js';
 const root=document.documentElement;
 const systemMotion=matchMedia('(prefers-reduced-motion: reduce)');
 let preference;try{preference=localStorage.getItem('eyilade-motion');}catch{}
@@ -40,10 +41,7 @@ function updateScroll(){
 addEventListener('scroll',()=>{if(!scrollPending){scrollPending=true;requestAnimationFrame(updateScroll);}},{passive:true});updateScroll();
 if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}}),{threshold:.07});
  document.querySelectorAll('.project-item,.section-heading,.about-introduction,.brand-lineup,.tool-system,.pathway,.case-details>div,.mark-note').forEach(el=>{if(!motionOff){el.classList.add('will-reveal');observer.observe(el);}});}
-const portrait=document.querySelector('.illustration-button');let greetingTimer;
-portrait?.addEventListener('click',()=>{clearTimeout(greetingTimer);portrait.classList.remove('is-greeting');requestAnimationFrame(()=>portrait.classList.add('is-greeting'));document.querySelector('.hello-status').textContent='Good to meet you. Thanks for stopping by.';greetingTimer=setTimeout(()=>{portrait.classList.remove('is-greeting');document.querySelector('.hello-status').textContent='';},2600);});
-if(portrait&&matchMedia('(hover:hover) and (pointer:fine)').matches){let pointerFrame=0;portrait.addEventListener('pointermove',e=>{if(motionOff||pointerFrame)return;const {clientX:x,clientY:y}=e;pointerFrame=requestAnimationFrame(()=>{const r=portrait.getBoundingClientRect();portrait.style.setProperty('--portrait-x',`${((x-r.left)/r.width-.5)*8}px`);portrait.style.setProperty('--portrait-y',`${((y-r.top)/r.height-.5)*5}px`);pointerFrame=0;});});
- const reset=()=>{cancelAnimationFrame(pointerFrame);pointerFrame=0;portrait.style.setProperty('--portrait-x','0px');portrait.style.setProperty('--portrait-y','0px');};portrait.addEventListener('pointerleave',reset);document.addEventListener('portfolio:motion',reset);}
+mountHeroCharacter();
 const track=document.querySelector('.career-track');
 if(track){
  const events=[...track.querySelectorAll('[data-career-id]')];const buttons=[...document.querySelectorAll('[data-career-step]')];let index=0,pending=false;

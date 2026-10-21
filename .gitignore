@@ -7,4 +7,7 @@ output/
 *.tgz
 
 # Original supplied production sources stay local; optimised derivatives are tracked.
-Assets/
+/Assets/
+
+# Generated motion review packs remain local; approved web exports are tracked.
+/artwork/

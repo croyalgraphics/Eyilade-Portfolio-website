@@ -1,0 +1,47 @@
+{
+  "allowedStates": [
+    "idle",
+    "wave",
+    "thinking",
+    "thumbs-up"
+  ],
+  "excludedState": "blink",
+  "exports": [
+    {
+      "state": "idle",
+      "sourceSheet": "artwork/eyilade-smooth-v2/sheets/idle.png",
+      "sourceSha256": "ffb89166bae42b1d0feb2556391c72eb6504aebde820b85e5be5a7033f461867",
+      "sourceStill": "frames/idle/idle_01.png",
+      "frameCount": 6,
+      "atlasBytes": 338704,
+      "posterBytes": 59790
+    },
+    {
+      "state": "wave",
+      "sourceSheet": "artwork/eyilade-smooth-v2/sheets/wave.png",
+      "sourceSha256": "196ad29aeba21e6bdc0efe35fb2e6728d8946cb7afe0c2ebcc4737f097319caf",
+      "sourceStill": "frames/wave/wave_03.png",
+      "frameCount": 6,
+      "atlasBytes": 369536,
+      "posterBytes": 65624
+    },
+    {
+      "state": "thinking",
+      "sourceSheet": "artwork/eyilade-smooth-v2/sheets/thinking.png",
+      "sourceSha256": "47ca9a2aff7ff1f8f9e6acb983e77a1df0d47b4e9ee90a7620303c14579c64bc",
+      "sourceStill": "frames/thinking/thinking_04.png",
+      "frameCount": 6,
+      "atlasBytes": 328386,
+      "posterBytes": 58312
+    },
+    {
+      "state": "thumbs-up",
+      "sourceSheet": "artwork/eyilade-smooth-v2/sheets/thumbs-up.png",
+      "sourceSha256": "eb136bf1435c9b950bfde13ca5fdb6f6181af488b4ca5cfe548c26e9b039c0ab",
+      "sourceStill": "frames/thumbs-up/thumbs-up_04.png",
+      "frameCount": 6,
+      "atlasBytes": 347822,
+      "posterBytes": 61540
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "version": 2,
+  "style": "smooth-illustration",
+  "width": 512,
+  "height": 768,
+  "columns": 3,
+  "states": {
+    "idle": {
+      "atlas": "/assets/character/idle-atlas.webp",
+      "poster": "/assets/character/idle-still.webp",
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        450,
+        350,
+        350,
+        400,
+        350,
+        400
+      ]
+    },
+    "wave": {
+      "atlas": "/assets/character/wave-atlas.webp",
+      "poster": "/assets/character/wave-still.webp",
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "durations": [
+        100,
+        100,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        100,
+        500
+      ]
+    },
+    "thinking": {
+      "atlas": "/assets/character/thinking-atlas.webp",
+      "poster": "/assets/character/thinking-still.webp",
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "durations": [
+        160,
+        160,
+        250,
+        400,
+        400,
+        500,
+        300,
+        300,
+        200,
+        160,
+        600
+      ]
+    },
+    "thumbs-up": {
+      "atlas": "/assets/character/thumbs-up-atlas.webp",
+      "poster": "/assets/character/thumbs-up-still.webp",
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        3,
+        2,
+        1,
+        0
+      ],
+      "durations": [
+        160,
+        140,
+        160,
+        200,
+        350,
+        250,
+        200,
+        160,
+        140,
+        600
+      ]
+    }
+  }
+}

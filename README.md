@@ -11,6 +11,8 @@ Use Node 24 or newer. Install with `npm ci --cache /private/tmp/eyilade-npm-cach
 ## Editing
 
 - `src/`: page templates, shared interactions and design tokens/styles.
+- `content/character.json`: approved hero states, atlas/poster paths and frame timing.
+- `scripts/prepare_hero_character.mjs`: four-state web exports from the approved local smooth pack.
 - `content/career.json`: chronological source data; concurrent roles remain distinct.
 - `content/projects.json`: existing project descriptions and galleries.
 - `content/logos.json`, `content/master-assets.json`: prepared artwork metadata.
@@ -23,7 +25,7 @@ Original `Assets/` stay local and unchanged. Optimised derivatives and curated d
 
 ## Interaction
 
-The navigation uses a travelling capsule and native mobile disclosure. The supplied character is a 2D illustration with bounded pointer/click feedback; no rigged model is claimed. Desktop career history supports native horizontal scrolling, keyboard and Earlier/Later controls; phones show a vertical timeline.
+The navigation uses a travelling capsule and native mobile disclosure. The approved smooth character uses four timed 2D sprite states: breathing, wave, thinking and thumbs-up. Blink is excluded. A static responsive poster loads first, idle starts after page load, and gesture atlases load on demand. Playback pauses offscreen/in hidden tabs, and motion-off uses still reactions. No rigged model is claimed. Desktop career history supports native horizontal scrolling, keyboard and Earlier/Later controls; phones show a vertical timeline.
 
 Logofolio has exactly three CSS rows moving left to right. Each row duplicates its finalised sequence exactly, with different durations and initial offsets. A complete still index, motion switch, device reduced-motion support and row pause controls provide alternatives. Repeated copies are noninteractive and hidden from assistive technology. The former Three.js room remains unused source and is excluded from the build.
 

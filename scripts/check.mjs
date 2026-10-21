@@ -42,6 +42,13 @@ for(const font of ['beach-sound.woff2','rubik-variable.woff2'])try{await access(
 for(const l of logos){if(!l.width||!l.height)errors.push(`Logo dimensions missing: ${l.name}`);if(l.project)try{await access(resolve(root,'.'+l.project,'index.html'));}catch{errors.push(`Invalid logo project: ${l.name}`);}}
 if(assets.brands.length!==4||!['PwC','Dabur','PZ Cussons','Sandtex'].every(name=>assets.brands.some(b=>b.name===name)))errors.push('Expected all four supplied brand logos.');
 if(!assets.timelineLogos.pwc||(home.match(/class="career-logo"[^>]*src="\/assets\/master\/brand-pwc.webp"/g)||[]).length!==3)errors.push('PwC logo must appear on all three career stages.');
+const character=JSON.parse(await readFile('content/character.json','utf8'));
+const allowed=['idle','wave','thinking','thumbs-up'];
+if(Object.keys(character.states).join(',')!==allowed.join(','))errors.push('Hero must use exactly four approved states; blink is excluded.');
+for(const state of allowed){const a=character.states[state];if(!a||a.sequence.length!==a.durations.length||a.sequence.some(f=>!Number.isInteger(f)||f<0||f>5)||a.durations.some(d=>d<60))errors.push(`Invalid hero playback: ${state}`);for(const file of [a.atlas,a.poster])try{await access(resolve(root,'.'+file));}catch{errors.push(`Missing hero asset ${file}`);}}
+const runtime=await readFile(resolve(root,'main.js'),'utf8');
+if(/blink/i.test(home+runtime)||files.some(p=>p.includes('/assets/character/')&&/blink/i.test(p)))errors.push('Blink must not appear in the public hero, runtime or character assets.');
+if(!home.includes('character-canvas')||!home.includes('character-poster'))errors.push('Hero needs both sprite canvas and static fallback.');
 if(!home.includes('tel:+2348119995647'))errors.push('Exact authorised phone missing.');
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`PASS: ${pages.length} pages, ${links} internal references, 19 unique logo assets, image dimensions, page metadata and private-content boundary.`);

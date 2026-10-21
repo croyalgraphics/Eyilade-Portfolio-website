@@ -7,6 +7,7 @@ const projects=JSON.parse(await read('content/projects.json'));
 const logos=JSON.parse(await read('content/logos.json'));
 const assets=JSON.parse(await read('content/master-assets.json'));
 const career=JSON.parse(await read('content/career.json'));
+const character=JSON.parse(await read('content/character.json'));
 const dimensions=new Map(JSON.parse(await read('docs/ASSET_MANIFEST.json')).map(a=>[a.asset,a.source_size]));
 const origin=process.env.SITE_ORIGIN||'https://eyilade-oridamisi.bubblydill512.chatgpt.site';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -44,7 +45,7 @@ async function page(path,title,desc,content,active='',schema=null){
  const html=`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f3ea"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}">${path==='/404.html'?'<meta name="robots" content="noindex">':''}<link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${origin}/assets/social-preview.jpg"><meta property="og:image:alt" content="Eyilade Oridamisi — Visual designer and creative thinker"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><script>${preflight}</script><link rel="preload" href="/assets/fonts/beach-sound.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/rubik-variable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/styles.css"><script type="module" src="/main.js"></script>${jsonLD?`<script type="application/ld+json">${jsonLD}</script>`:''}</head><body id="top" class="page-${active||'home'}">${header(active)}<main id="main">${content}</main>${footer()}<dialog class="lightbox" aria-label="Artwork viewer" aria-describedby="lightbox-caption"><div class="lightbox-toolbar"><p id="lightbox-caption" aria-live="polite" aria-atomic="true"></p><div><button class="lightbox-prev" aria-label="Previous image">Previous</button><button class="lightbox-next" aria-label="Next image">Next</button><button class="lightbox-close" aria-label="Close image viewer">Close</button></div></div><p class="image-status" role="status"></p><div class="lightbox-image-area"><img alt="" width="1280" height="1000"></div><a class="lightbox-original" target="_blank" rel="noopener noreferrer">Open full image</a></dialog></body></html>`;
  const target=path==='/404.html'?'dist/404.html':resolve('dist','.'+path,'index.html');await mkdir(resolve(target,'..'),{recursive:true});await writeFile(target,html);
 }
-const replaceAssets=s=>s.replaceAll('{{HERO_FULL}}',assets.hero.full1024).replaceAll('{{HERO_FULL_SMALL}}',assets.hero.full640).replaceAll('{{HERO_CLOSE}}',assets.hero.close800);
+const replaceAssets=s=>s.replaceAll('{{CHARACTER_POSTER}}',character.states.idle.poster).replaceAll('{{HERO_FULL}}',assets.hero.full1024).replaceAll('{{HERO_FULL_SMALL}}',assets.hero.full640).replaceAll('{{HERO_CLOSE}}',assets.hero.close800);
 const home=replaceAssets(await read('src/index.html')).replace('{{DISCIPLINES}}',disciplinesHTML).replace('{{CAREER}}',careerHTML()).replace('{{BRANDS}}',brandsHTML()).replace('{{TOOLS}}',toolsHTML);
 await page('/','Eyilade Oridamisi — Visual Designer & Creative Thinker','The interactive CV and portfolio of Eyilade Oridamisi. Explore experience, skills, brand identities and creative work.',home,'',{'@context':'https://schema.org','@type':'Person',name:'Eyilade J. Oridamisi',url:origin,jobTitle:'Senior Graphic Designer',email:'eyilade@gmail.com',telephone:'+2348119995647',sameAs:['https://behance.net/eyiladeoridamisi','https://linkedin.com/in/eyiladeoridamisi']});
 await page('/about/','About Eyilade — Designer, Thinker, Maker','Meet Eyilade Oridamisi: a senior graphic designer connecting visual identity, storytelling and creative technology.',replaceAssets(await read('src/about.html')),'about');
@@ -56,7 +57,7 @@ for(const[i,p]of projects.entries()){
  await page('/work/'+p.slug+'/',p.name+' — Eyilade Oridamisi',p.line+' '+p.type+' by Eyilade Oridamisi.',content,'work');
 }
 await page('/404.html','Page not found — Eyilade Oridamisi','Return to the portfolio of Eyilade Oridamisi.','<section class="not-found section-pad"><p class="page-label">404</p><h1>A little<br><em>off the page.</em></h1><a class="button primary" href="/">Back home</a></section>');
-await build({entryPoints:['src/main.js'],outfile:'dist/main.js',minify:true,format:'esm',target:'es2022'});
+await build({entryPoints:['src/main.js'],outfile:'dist/main.js',bundle:true,minify:true,format:'esm',target:'es2022'});
 await build({entryPoints:['src/styles.css'],outfile:'dist/styles.css',minify:true,external:['/assets/*'],bundle:true});
 await rm('dist/room.js',{force:true});
 await writeFile('dist/assets/logos.json',JSON.stringify(logos));
