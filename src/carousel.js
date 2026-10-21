@@ -1,0 +1,20 @@
+export function mountWorks(){
+ const host=document.querySelector('.works-carousel');if(!host)return;
+ const cards=[...host.querySelectorAll('.project-item')],stage=host.querySelector('.project-grid'),previous=host.querySelector('[data-project-step="-1"]'),next=host.querySelector('[data-project-step="1"]'),toggle=host.querySelector('.carousel-toggle'),status=host.querySelector('.carousel-status');
+ let items=cards,index=0,paused=false,hover=false,focused=false,visible=false,timer=0,startX=null,moved=false;
+ const off=()=>document.documentElement.classList.contains('motion-off');
+ host.classList.add('is-enhanced');stage.tabIndex=0;stage.setAttribute('aria-label','Project carousel. Use left and right arrow keys to browse.');
+ host.querySelector('.carousel-controls').hidden=false;
+ function schedule(){clearTimeout(timer);const stopped=paused||hover||focused||!visible||document.hidden||off()||items.length<2;host.dataset.autoplay=stopped?'paused':'playing';toggle.textContent=off()?'Motion off':paused?'Play slideshow':'Pause slideshow';toggle.disabled=off()||items.length<2;toggle.setAttribute('aria-pressed',String(paused||off()));if(!stopped)timer=setTimeout(()=>go(1,false),5500);}
+ function render(){cards.forEach(c=>{const i=items.indexOf(c);c.hidden=i===-1;if(i===-1)return;let offset=(i-index+items.length)%items.length;if(offset>items.length/2)offset-=items.length;const shown=Math.abs(offset)<=1;c.dataset.position=String(offset);c.style.setProperty('--card-position',offset);c.classList.toggle('is-current',offset===0);c.inert=!shown;c.setAttribute('aria-hidden',String(!shown));c.setAttribute('role','group');c.setAttribute('aria-roledescription','slide');c.setAttribute('aria-label',`${i+1} of ${items.length}`);});status.textContent=`${String(index+1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}`;previous.disabled=next.disabled=items.length<2;schedule();}
+ function go(step,manual=true){if(items.length<2)return;if(manual)paused=true;index=(index+step+items.length)%items.length;render();if(manual)host.querySelector('.carousel-announcement').textContent=`Project ${index+1} of ${items.length}: ${items[index].querySelector('h3').textContent}`;}
+ previous.addEventListener('click',()=>go(-1));next.addEventListener('click',()=>go(1));toggle.addEventListener('click',()=>{paused=!paused;schedule();});
+ host.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();go(e.key==='ArrowRight'?1:-1);}});
+ host.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'){hover=true;schedule();}});host.addEventListener('pointerleave',()=>{hover=false;schedule();});
+ host.addEventListener('focusin',()=>{focused=true;schedule();});host.addEventListener('focusout',e=>{focused=host.contains(e.relatedTarget);schedule();});
+ stage.addEventListener('dragstart',e=>e.preventDefault());
+ stage.addEventListener('pointerdown',e=>{if(e.isPrimary){startX=e.clientX;moved=false;}});stage.addEventListener('pointerup',e=>{if(startX===null)return;const delta=e.clientX-startX;startX=null;if(Math.abs(delta)>45){moved=true;go(delta<0?1:-1);}});stage.addEventListener('pointercancel',()=>startX=null);stage.addEventListener('click',e=>{if(moved){e.preventDefault();moved=false;}},true);
+ document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});items=cards.filter(c=>filter==='all'||c.dataset.category===filter);index=0;paused=true;render();document.querySelector('#filter-status').textContent=`Showing ${items.length} ${filter==='all'?'selected':filter} project${items.length===1?'':'s'}.`;}));
+ if('IntersectionObserver'in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule();},{threshold:.2}).observe(host);else visible=true;
+ document.addEventListener('portfolio:motion',schedule);document.addEventListener('visibilitychange',schedule);addEventListener('pagehide',()=>clearTimeout(timer),{once:true});render();
+}

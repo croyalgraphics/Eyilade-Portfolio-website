@@ -1,4 +1,6 @@
-import {mountHeroCharacter} from './character.js';
+import {mountHeroCharacter,mountFooterCharacter} from './character.js';
+import {mountCareer} from './career.js';
+import {mountWorks} from './carousel.js';
 const root=document.documentElement;
 const systemMotion=matchMedia('(prefers-reduced-motion: reduce)');
 let preference;try{preference=localStorage.getItem('eyilade-motion');}catch{}
@@ -29,43 +31,18 @@ navLinks.forEach(a=>{for(const type of ['pointerenter','focus'])a.addEventListen
 nav.addEventListener('pointerleave',()=>{if(!nav.contains(document.activeElement))restoreNav();});
 nav.addEventListener('focusout',e=>{if(!nav.contains(e.relatedTarget))restoreNav();});
 restoreNav();document.fonts.ready.then(restoreNav);addEventListener('resize',restoreNav,{passive:true});
-const home=location.pathname==='/';
 const progress=document.querySelector('.scroll-progress');let scrollPending=false;
 function updateScroll(){
  const max=root.scrollHeight-innerHeight;progress.style.transform=`scaleX(${max>0?scrollY/max:0})`;
- if(home){const about=document.querySelector('#about'),contact=document.querySelector('#contact');const name=contact.getBoundingClientRect().top<innerHeight*.6?'contact':about.getBoundingClientRect().top<innerHeight*.45?'about':'home';
-  document.querySelectorAll('[data-nav]').forEach(a=>{if(a.dataset.nav===name)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
-  if(!nav.classList.contains('is-tracking'))highlight(currentNav());}
  scrollPending=false;
 }
 addEventListener('scroll',()=>{if(!scrollPending){scrollPending=true;requestAnimationFrame(updateScroll);}},{passive:true});updateScroll();
 if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}}),{threshold:.07});
  document.querySelectorAll('.project-item,.section-heading,.about-introduction,.brand-lineup,.tool-system,.pathway,.case-details>div,.mark-note').forEach(el=>{if(!motionOff){el.classList.add('will-reveal');observer.observe(el);}});}
 mountHeroCharacter();
-const track=document.querySelector('.career-track');
-if(track){
- const events=[...track.querySelectorAll('[data-career-id]')];const buttons=[...document.querySelectorAll('[data-career-step]')];let index=0,pending=false;
- const mobile=matchMedia('(max-width:600px)');track.tabIndex=0;
- document.querySelector('.career-navigation').hidden=false;
- function updateCareer(){
-  const bounds=track.getBoundingClientRect();let closest=Infinity;
-  events.forEach((event,i)=>{const rect=event.getBoundingClientRect();const distance=mobile.matches?Math.abs(rect.top-innerHeight*.3):Math.abs(rect.left-bounds.left);if(distance<closest){closest=distance;index=i;}});
-  events.forEach((event,i)=>{event.classList.toggle('is-active',i===index);if(i===index)event.setAttribute('aria-current','step');else event.removeAttribute('aria-current');});
-  document.querySelector('.career-position').textContent=`${String(index+1).padStart(2,'0')} / ${events.length}`;
-  document.querySelector('.career-progress>span').style.transform=`scaleX(${(index+1)/events.length})`;
-  buttons[0].disabled=index===0;buttons[1].disabled=index===events.length-1;pending=false;
- }
- const queue=()=>{if(!pending){pending=true;requestAnimationFrame(updateCareer);}};
- function go(step){index=Math.max(0,Math.min(events.length-1,index+step));const left=events[index].getBoundingClientRect().left-track.getBoundingClientRect().left+track.scrollLeft;track.scrollTo({left,behavior:motionOff?'instant':'smooth'});}
- buttons.forEach(b=>b.addEventListener('click',()=>go(Number(b.dataset.careerStep))));
- track.addEventListener('keydown',e=>{if(mobile.matches||e.target!==track)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(e.key==='ArrowRight'?1:-1);}});
- track.addEventListener('scroll',queue,{passive:true});addEventListener('scroll',()=>{if(mobile.matches&&track.getBoundingClientRect().bottom>0&&track.getBoundingClientRect().top<innerHeight)queue();},{passive:true});addEventListener('resize',queue,{passive:true});updateCareer();
-}
-document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
- const filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{const selected=b===button;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected));});let count=0;
- document.querySelectorAll('.project-item').forEach(el=>{const show=filter==='all'||el.dataset.category===filter;el.hidden=!show;el.classList.remove('will-reveal');el.classList.toggle('filter-enter',show&&!motionOff);if(show)count++;});
- document.querySelector('#filter-status').textContent=`Showing ${count} ${filter==='all'?'selected':filter} project${count===1?'':'s'}.`;
-}));
+mountCareer();
+mountWorks();
+mountFooterCharacter();
 const copy=document.querySelector('.copy-email');let copyTimer;
 copy?.addEventListener('click',async()=>{clearTimeout(copyTimer);try{await navigator.clipboard.writeText('eyilade@gmail.com');copy.querySelector('span').textContent='Copied';document.querySelector('.copy-status').textContent='Email address copied.';copyTimer=setTimeout(()=>copy.querySelector('span').textContent='Copy email',2500);}catch{document.querySelector('.copy-status').textContent='Copy unavailable. Email: eyilade@gmail.com';copy.querySelector('span').textContent='eyilade@gmail.com';}});
 const lightbox=document.querySelector('.lightbox');const imageButtons=[...document.querySelectorAll('.image-zoom')];let currentImage=0,lightboxTrigger=null;

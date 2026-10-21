@@ -61,6 +61,30 @@
       "width": 192,
       "height": 192,
       "source": "Assets/Career and skills/codex-logo.png"
+    },
+    {
+      "name": "Figma",
+      "slug": "figma",
+      "image": "/assets/master/tool-figma.webp",
+      "width": 128,
+      "height": 192,
+      "source": "Assets/Career and skills/Figma-logo.svg.webp"
+    },
+    {
+      "name": "GitHub",
+      "slug": "github",
+      "image": "/assets/master/tool-github.webp",
+      "width": 192,
+      "height": 188,
+      "source": "Assets/Career and skills/Github.png"
+    },
+    {
+      "name": "Leonardo AI",
+      "slug": "leonardo-ai",
+      "image": "/assets/master/tool-leonardo-ai.webp",
+      "width": 192,
+      "height": 75,
+      "source": "Assets/Career and skills/Leonardo.Ai-Symbol.png"
     }
   ],
   "brands": [

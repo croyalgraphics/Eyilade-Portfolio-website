@@ -55,6 +55,9 @@ TOOLS = [
     ("After Effects", "after-effects", "Adobe_After_Effects_CC_icon.svg.webp"),
     ("Premiere Pro", "premiere-pro", "Adobe_Premiere_Pro_CC_icon.svg.webp"),
     ("Codex", "codex", "codex-logo.png"),
+    ("Figma", "figma", "Figma-logo.svg.webp"),
+    ("GitHub", "github", "Github.png"),
+    ("Leonardo AI", "leonardo-ai", "Leonardo.Ai-Symbol.png"),
 ]
 BRANDS = [
     ("Dabur", "dabur", "Dabur_Logo.svg.webp"),

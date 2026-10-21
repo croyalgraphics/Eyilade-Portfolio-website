@@ -32,16 +32,23 @@ const home=await readFile(resolve(root,'index.html'),'utf8');
 const folio=await readFile(resolve(root,'logofolio/index.html'),'utf8');
 const assets=JSON.parse(await readFile('content/master-assets.json','utf8'));
 const career=JSON.parse(await readFile('content/career.json','utf8'));
-if(career.length!==13||(home.match(/data-career-id=/g)||[]).length!==13)errors.push('Expected all thirteen career records.');
+if(career.length!==7||(home.match(/data-career-id=/g)||[]).length!==7)errors.push('Expected exactly seven consolidated career milestones.');
 if(career.some((c,i)=>i&&c.start<career[i-1].start))errors.push('Career records must be chronological.');
-if(assets.tools.map(t=>t.slug).join(',')!=='photoshop,illustrator,indesign,after-effects,premiere-pro,codex')errors.push('Expected exactly the six authorised tools.');
+if(assets.tools.map(t=>t.slug).join(',')!=='photoshop,illustrator,indesign,after-effects,premiere-pro,codex,figma,github,leonardo-ai')errors.push('Expected the nine supplied tools.');
 if(/class="project-item|class="logo-flow|class="logo-index/.test(home))errors.push('Home may not embed project or logo galleries.');
 if((folio.match(/class="logo-lane"/g)||[]).length!==3)errors.push('Expected exactly three logo lanes.');
 if(folio.includes('data-room-mode="gallery"'))errors.push('Paused 3D gallery must not be exposed.');
 for(const font of ['beach-sound.woff2','rubik-variable.woff2'])try{await access(resolve(root,'assets/fonts',font));}catch{errors.push(`Missing supplied font ${font}`);}
 for(const l of logos){if(!l.width||!l.height)errors.push(`Logo dimensions missing: ${l.name}`);if(l.project)try{await access(resolve(root,'.'+l.project,'index.html'));}catch{errors.push(`Invalid logo project: ${l.name}`);}}
 if(assets.brands.length!==4||!['PwC','Dabur','PZ Cussons','Sandtex'].every(name=>assets.brands.some(b=>b.name===name)))errors.push('Expected all four supplied brand logos.');
-if(!assets.timelineLogos.pwc||(home.match(/class="career-logo"[^>]*src="\/assets\/master\/brand-pwc.webp"/g)||[]).length!==3)errors.push('PwC logo must appear on all three career stages.');
+if(!assets.timelineLogos.pwc||(home.match(/class="career-logo"[^>]*src="\/assets\/master\/brand-pwc.webp"/g)||[]).length!==1)errors.push('PwC must appear in one consolidated milestone.');
+if(career.map(c=>c.id).join(',')!=='intelligentsia,nysc,running-jack,citypartner,ferman,redot,pwc')errors.push('Career consolidation/order does not match the approved directive.');
+const pwc=career.find(c=>c.id==='pwc');
+if(pwc.start!=='2022-02'||pwc.end!==null||pwc.role!=='Senior Graphic Designer'||pwc.progression?.length!==3||!pwc.progression[2].current)errors.push('PwC period/current position/progression incorrect.');
+if(home.includes('character-reactions'))errors.push('Visible character controls must be removed.');
+const works=await readFile(resolve(root,'work/index.html'),'utf8');
+if(!works.includes('works-carousel')||(works.match(/class="project-item/g)||[]).length!==11)errors.push('Works carousel must retain all eleven projects.');
+for(const path of pages){const html=await readFile(path,'utf8');if(html.includes('href="/#about" data-nav="about"')||!html.includes('href="/about/" data-nav="about"'))errors.push(`${path}: About must link to its dedicated route.`);if(!html.includes('class="footer-character"')||!html.includes('/assets/icons/linkedin-in.svg')||!html.includes('https://behance.net/eyiladeoridamisi'))errors.push(`${path}: shared contact/footer missing.`);}
 const character=JSON.parse(await readFile('content/character.json','utf8'));
 const allowed=['idle','wave','thinking','thumbs-up'];
 if(Object.keys(character.states).join(',')!==allowed.join(','))errors.push('Hero must use exactly four approved states; blink is excluded.');
