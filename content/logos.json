@@ -1,0 +1,161 @@
+[
+  {
+    "slug": "agrohub",
+    "name": "Agrohub & Investment",
+    "image": "/assets/master/logo-agrohub.webp",
+    "width": 840,
+    "height": 252,
+    "source": "Assets/Agrohub investment/Agrohub investment main logo.png"
+  },
+  {
+    "slug": "beans-central",
+    "name": "Beans Central",
+    "image": "/assets/master/logo-beans-central.webp",
+    "width": 840,
+    "height": 509,
+    "source": "Assets/Beans Cental Logo/Beans Cental Logo.png",
+    "project": "/work/beans-central/"
+  },
+  {
+    "slug": "clenstreet",
+    "name": "ClenStreet",
+    "image": "/assets/master/logo-clenstreet.webp",
+    "width": 840,
+    "height": 253,
+    "source": "Assets/ClenStreet/Main logo.svg"
+  },
+  {
+    "slug": "docs-apothecary",
+    "name": "Doc’s Apothecary",
+    "image": "/assets/master/logo-docs-apothecary.webp",
+    "width": 840,
+    "height": 339,
+    "source": "Assets/Doc's Apothecary.png",
+    "project": "/work/docs-apothecary/"
+  },
+  {
+    "slug": "efame",
+    "name": "Efame Real Estate",
+    "image": "/assets/master/logo-efame.webp",
+    "width": 840,
+    "height": 352,
+    "source": "Assets/Efame real estate.png"
+  },
+  {
+    "slug": "feasts-and-flavours",
+    "name": "Feasts & Flavours",
+    "image": "/assets/master/logo-feasts-and-flavours.webp",
+    "width": 588,
+    "height": 570,
+    "source": "Assets/Feast and flavours/Feast and flavours Full colored logo.png",
+    "project": "/work/feasts-and-flavours/"
+  },
+  {
+    "slug": "genesis-orb",
+    "name": "Genesis Orb",
+    "image": "/assets/master/logo-genesis-orb.webp",
+    "width": 840,
+    "height": 228,
+    "source": "Assets/Genesis Orb/Genesis orb Logo 1.png",
+    "project": "/work/genesis-orb/"
+  },
+  {
+    "slug": "intelligentsia-orb",
+    "name": "Intelligentsia Orb",
+    "image": "/assets/master/logo-intelligentsia-orb.webp",
+    "width": 611,
+    "height": 570,
+    "source": "Assets/Intelligentsial orb.png"
+  },
+  {
+    "slug": "lecco-inn",
+    "name": "Lecco Inn",
+    "image": "/assets/master/logo-lecco-inn.webp",
+    "width": 840,
+    "height": 256,
+    "source": "Assets/Lecco Inn/Lecco Inn Logo 1.png"
+  },
+  {
+    "slug": "lizcraft",
+    "name": "LizCraft",
+    "image": "/assets/master/logo-lizcraft.webp",
+    "width": 840,
+    "height": 240,
+    "source": "Assets/Lizcraft/LizCraft Logo 2.png",
+    "project": "/work/lizcraft/"
+  },
+  {
+    "slug": "lizinterior",
+    "name": "LizInterior",
+    "image": "/assets/master/logo-lizinterior.webp",
+    "width": 840,
+    "height": 207,
+    "source": "Assets/LizInterior/Liz Interior Secondary logo.png"
+  },
+  {
+    "slug": "ppcl",
+    "name": "PPCL",
+    "image": "/assets/master/logo-ppcl.webp",
+    "width": 481,
+    "height": 570,
+    "source": "Assets/PPCL logo.png"
+  },
+  {
+    "slug": "purehive",
+    "name": "Pure Hive Honey",
+    "image": "/assets/master/logo-purehive.webp",
+    "width": 840,
+    "height": 342,
+    "source": "Assets/Pure Hive Honey.png",
+    "project": "/work/purehive/"
+  },
+  {
+    "slug": "rebeks-savour",
+    "name": "Rebeks Savour",
+    "image": "/assets/master/logo-rebeks-savour.webp",
+    "width": 569,
+    "height": 570,
+    "source": "Assets/Rebeks savour.png"
+  },
+  {
+    "slug": "swift-tern",
+    "name": "Swift Tern Airways",
+    "image": "/assets/master/logo-swift-tern.webp",
+    "width": 397,
+    "height": 570,
+    "source": "Assets/Swift tern/Swift Tern Logo.png"
+  },
+  {
+    "slug": "natoral",
+    "name": "Natoral",
+    "image": "/assets/master/logo-natoral.webp",
+    "width": 840,
+    "height": 220,
+    "source": "Assets/Natoral/Natoral Logo 2.png",
+    "project": "/work/natoral/"
+  },
+  {
+    "slug": "crg",
+    "name": "CRGraphics",
+    "image": "/assets/master/logo-crg.webp",
+    "width": 840,
+    "height": 444,
+    "source": "Assets/CRG logos/Full Logo.png"
+  },
+  {
+    "slug": "primefits",
+    "name": "PrimeFits",
+    "image": "/assets/master/logo-primefits.webp",
+    "width": 840,
+    "height": 174,
+    "source": "Assets/PrimeFits/Prmefits main Logo.svg"
+  },
+  {
+    "slug": "yoma",
+    "name": "Yoma",
+    "image": "/assets/master/logo-yoma.webp",
+    "width": 840,
+    "height": 235,
+    "source": "Assets/Yoma/Yoma Logo.png"
+  }
+]

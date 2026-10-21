@@ -1,0 +1,293 @@
+[
+  {
+    "slug": "lizcraft",
+    "name": "LizCraft",
+    "line": "A signature with a softer edge.",
+    "category": "Identity",
+    "type": "Brand identity & packaging",
+    "image": "lizcraft-blue",
+    "color": "#d5e6ec",
+    "intro": "An identity built around a sculpted monogram, an expressive serif wordmark, and a blue-and-gold palette. The result is a visual language that carries from the smallest mark to the shopping bag.",
+    "focus": "Logo design, visual identity, brand pattern, packaging application",
+    "details": [
+      [
+        "A recognisable signature",
+        "The letter L sits inside a softly irregular frame. Repeated contours extend that frame into a graphic language of its own."
+      ],
+      [
+        "Consistency, with room to move",
+        "Horizontal and vertical signatures, a standalone monogram, and a recurring contour pattern give the identity a flexible set of expressions."
+      ]
+    ],
+    "gallery": [
+      "lizcraft-white",
+      "lizcraft-mark",
+      "lizcraft-type",
+      "lizcraft-pattern",
+      "lizcraft-system"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "beans-central",
+    "name": "Beans Central",
+    "line": "Everyday food. Full of character.",
+    "category": "Identity",
+    "type": "Brand identity & campaign design",
+    "image": "beans-akara",
+    "color": "#f1bc3b",
+    "intro": "A bright, approachable identity for a food brand. A playful bean-and-fork symbol, rounded typography, and a confident red create a consistent frame for a menu full of personality.",
+    "focus": "Logo design, colour system, typography, social campaign assets",
+    "details": [
+      [
+        "Small symbol, big appetite",
+        "The illustrated bean becomes the anchor of a friendly signature. Red, warm yellow, and deep brown build a palette that feels closely connected to the food."
+      ],
+      [
+        "A system made for a menu",
+        "Bold curved headlines and generous food photography give each dish a moment of its own, while keeping the campaign recognisably connected."
+      ]
+    ],
+    "gallery": [
+      "beans-mark",
+      "beans-system",
+      "beans-porridge",
+      "beans-agoyin",
+      "beans-rice"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "natoral",
+    "name": "Natoral",
+    "line": "Nature, in a single gesture.",
+    "category": "Identity",
+    "type": "Logo & visual identity",
+    "image": "natoral-pattern",
+    "color": "#d5eeb3",
+    "intro": "A compact identity with a leaf-like symbol and a rounded wordmark. Deep green, fresh lime, and pale mint establish a visual connection to nature without overcomplicating the mark.",
+    "focus": "Logo design, colour variations, repeat pattern",
+    "details": [
+      [
+        "An identity that grows",
+        "The layered symbol brings together a simple natural silhouette and a distinctive rhythm of rounded forms."
+      ],
+      [
+        "From mark to pattern",
+        "Repeating the symbol creates a vivid brand texture. A set of colour variations keeps the signature usable across light and dark applications."
+      ]
+    ],
+    "gallery": [
+      "natoral-mark",
+      "natoral-lockup",
+      "natoral-colour",
+      "natoral-pattern"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "purehive",
+    "name": "Pure Hive Honey",
+    "line": "A little warmth. A clear identity.",
+    "category": "Identity",
+    "type": "Brand identity & packaging",
+    "image": "purehive-world",
+    "color": "#f1d89a",
+    "intro": "An identity and packaging exploration for Pure Hive Honey. A geometric honey-inspired mark, warm amber tones, and a characterful wordmark bring the product and its visual identity together.",
+    "focus": "Logo design, visual identity, packaging application",
+    "details": [
+      [
+        "Rooted in the product",
+        "The mark references a honeycomb form and a flowing honey detail. The palette draws directly from the natural warmth of the product."
+      ],
+      [
+        "Made tangible",
+        "The identity is shown in a jar application, connecting the logo, label, and product photography as one composition."
+      ]
+    ],
+    "gallery": [
+      "purehive-intro",
+      "purehive-world"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "feasts-and-flavours",
+    "name": "Feasts & Flavours",
+    "line": "An identity with an appetite.",
+    "category": "Identity",
+    "type": "Brand identity & art direction",
+    "image": "feasts-table",
+    "color": "#f5b7c6",
+    "intro": "A food identity that pairs a bold ornamental symbol with lively lettering. Rich red and generous food imagery give the system an immediate, celebratory presence.",
+    "focus": "Logo design, typography, colour system, branded food communication",
+    "details": [
+      [
+        "A distinctive centrepiece",
+        "A symmetrical symbol creates a recognisable focal point, while the expressive wordmark keeps the overall identity warm and informal."
+      ],
+      [
+        "Colour that carries",
+        "Red acts as the common thread across varied food compositions, from quieter white layouts to full-colour campaign pieces."
+      ]
+    ],
+    "gallery": [
+      "feasts-mark",
+      "feasts-system",
+      "feasts-curry",
+      "feasts-rice",
+      "feasts-chicken"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "objects-in-perspective",
+    "name": "Objects in perspective",
+    "line": "A different dimension of design.",
+    "category": "3D",
+    "type": "Independent 3D modelling studies",
+    "image": "coca-cola-world",
+    "color": "#ecc8cf",
+    "intro": "Independent modelling and rendering studies exploring familiar product forms. These pieces focus on shape, material, lighting, and composition, extending visual design into three dimensions.",
+    "focus": "3D modelling, material studies, product visualisation",
+    "details": [
+      [
+        "Learning through making",
+        "A beverage can and personal-care bottles become studies in surface, proportion, reflection, and light."
+      ],
+      [
+        "Study, not commission",
+        "These are independent practice pieces using existing product identities. They do not imply a commission, affiliation, or endorsement from the featured brands."
+      ]
+    ],
+    "gallery": [
+      "coca-cola-study",
+      "carex-3d-world",
+      "carex-study"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "genesis-orb",
+    "name": "Genesis Orb",
+    "line": "A simple mark. A consistent system.",
+    "category": "Identity",
+    "type": "Logo & brand guidelines",
+    "image": "genesis-logo",
+    "color": "#cbe7c8",
+    "intro": "A brand identity centred on a green-and-earth signature. The supplied identity guide defines logo arrangements, colour values, background usage, and clear examples of how the mark should be protected.",
+    "focus": "Logo design, signature arrangements, brand usage guide",
+    "details": [
+      [
+        "Structure and restraint",
+        "A circular green gesture and an angular earth-toned accent create the symbol. The wordmark brings a lighter typographic contrast."
+      ],
+      [
+        "A guide for consistency",
+        "The design extends into documented colour and logo-usage rules, helping the identity retain its proportions and character across applications."
+      ]
+    ],
+    "gallery": [
+      "genesis-colour",
+      "genesis-logo"
+    ]
+  },
+  {
+    "slug": "docs-apothecary",
+    "name": "Doc’s Apothecary",
+    "line": "Details, down to the label.",
+    "category": "Print",
+    "type": "Product label design",
+    "image": "docs-herbal",
+    "color": "#d8dec7",
+    "intro": "A collection of product labels for hair and skin care. The work brings together product names, ingredients, directions, and brand elements within the constraints of small print formats.",
+    "focus": "Packaging typography, product labels, print layout",
+    "details": [
+      [
+        "Clarity at a small scale",
+        "Product information needs a clear hierarchy. Each label balances the brand signature with the practical information a customer needs."
+      ],
+      [
+        "A family of applications",
+        "The supplied label artwork spans different products and container formats. The collection is presented here as graphic and packaging design."
+      ]
+    ],
+    "gallery": [
+      "docs-lips",
+      "docs-shea",
+      "docs-herbal"
+    ]
+  },
+  {
+    "slug": "on-paper",
+    "name": "On paper",
+    "line": "Stories you can hold.",
+    "category": "Print",
+    "type": "Editorial, packaging & print",
+    "image": "editorial-world",
+    "color": "#e9d3bc",
+    "intro": "Selected print work across company profiles, packaging, personal stationery, and music artwork. Each format asks for a different balance of image, typography, information, and pace.",
+    "focus": "Editorial layout, print design, packaging, music artwork",
+    "details": [
+      [
+        "Design beyond a screen",
+        "Print invites a more physical kind of attention: the scale of a title, the rhythm of a spread, the relationship between a cover and its contents."
+      ],
+      [
+        "Different formats, considered choices",
+        "This selection brings together a corporate profile, cocoa packaging, wedding stationery, and music artwork from the supplied portfolio."
+      ]
+    ],
+    "gallery": [
+      "cocoa-world",
+      "wedding-world",
+      "music-world",
+      "editorial-world"
+    ]
+  },
+  {
+    "slug": "in-the-feed",
+    "name": "In the feed",
+    "line": "A moment worth stopping for.",
+    "category": "Campaigns",
+    "type": "Social & campaign design",
+    "image": "carex-social",
+    "color": "#d9e6df",
+    "intro": "Selected social and campaign visuals from the supplied portfolio. The work brings brand consistency, clear hierarchy, product imagery, and platform-specific composition into a fast-moving format.",
+    "focus": "Social design, campaign assets, digital communication",
+    "details": [
+      [
+        "Designed for the moment",
+        "A social visual needs to communicate quickly while still feeling like part of a recognisable brand."
+      ],
+      [
+        "Context matters",
+        "This collection includes brand work completed directly and through agency relationships. It is presented as a selection of visual executions, without invented performance results."
+      ]
+    ],
+    "gallery": [
+      "social-collection",
+      "carex-social",
+      "medimax-social"
+    ]
+  },
+  {
+    "slug": "a-birthday-in-motion",
+    "name": "A birthday in motion",
+    "line": "A small celebration, brought to life.",
+    "category": "Motion",
+    "type": "Personal motion design",
+    "image": "birthday-still",
+    "color": "#ffd0ba",
+    "intro": "A short personal birthday animation. A compact motion piece with a simple purpose: turn a greeting into a moment that feels special.",
+    "focus": "Motion design, animated communication",
+    "details": [
+      [
+        "Play the piece",
+        "A short-format exploration of timing, transitions, and expressive movement."
+      ]
+    ],
+    "gallery": [],
+    "video": true
+  }
+]

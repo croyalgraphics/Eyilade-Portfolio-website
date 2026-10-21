@@ -1,0 +1,10 @@
+node_modules/
+output/
+.DS_Store
+.openai/*.local.*
+.openai/cache/
+*.tar.gz
+*.tgz
+
+# Original supplied production sources stay local; optimised derivatives are tracked.
+Assets/

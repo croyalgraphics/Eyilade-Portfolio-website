@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "full640": "/assets/master/eyilade-full-640.webp",
+    "full1024": "/assets/master/eyilade-full-1024.webp",
+    "close400": "/assets/master/eyilade-close-400.webp",
+    "close800": "/assets/master/eyilade-close-800.webp",
+    "fullWidth": 1024,
+    "fullHeight": 1536,
+    "closeWidth": 1254,
+    "closeHeight": 1254,
+    "sources": [
+      "Eyilade illustration(full pose view).png",
+      "Eyilade illustration (close-up view).png"
+    ]
+  },
+  "tools": [
+    {
+      "name": "Photoshop",
+      "slug": "photoshop",
+      "image": "/assets/master/tool-photoshop.webp",
+      "width": 192,
+      "height": 187,
+      "source": "Assets/Career and skills/Adobe_Photoshop_CC_icon.svg.webp"
+    },
+    {
+      "name": "Illustrator",
+      "slug": "illustrator",
+      "image": "/assets/master/tool-illustrator.webp",
+      "width": 192,
+      "height": 192,
+      "source": "Assets/Career and skills/Adobe_Illustrator_CC_icon.svg.webp"
+    },
+    {
+      "name": "InDesign",
+      "slug": "indesign",
+      "image": "/assets/master/tool-indesign.webp",
+      "width": 192,
+      "height": 187,
+      "source": "Assets/Career and skills/Adobe_InDesign_CC_icon.svg.webp"
+    },
+    {
+      "name": "After Effects",
+      "slug": "after-effects",
+      "image": "/assets/master/tool-after-effects.webp",
+      "width": 192,
+      "height": 187,
+      "source": "Assets/Career and skills/Adobe_After_Effects_CC_icon.svg.webp"
+    },
+    {
+      "name": "Premiere Pro",
+      "slug": "premiere-pro",
+      "image": "/assets/master/tool-premiere-pro.webp",
+      "width": 192,
+      "height": 187,
+      "source": "Assets/Career and skills/Adobe_Premiere_Pro_CC_icon.svg.webp"
+    },
+    {
+      "name": "Codex",
+      "slug": "codex",
+      "image": "/assets/master/tool-codex.webp",
+      "width": 192,
+      "height": 192,
+      "source": "Assets/Career and skills/codex-logo.png"
+    }
+  ],
+  "brands": [
+    {
+      "name": "Dabur",
+      "slug": "dabur",
+      "image": "/assets/master/brand-dabur.webp",
+      "width": 291,
+      "height": 260,
+      "source": "Assets/Career and skills/Dabur_Logo.svg.webp"
+    },
+    {
+      "name": "PZ Cussons",
+      "slug": "pz-cussons",
+      "image": "/assets/master/brand-pz-cussons.webp",
+      "width": 376,
+      "height": 260,
+      "source": "Assets/Career and skills/PZ_Cussons_logo.svg.webp"
+    },
+    {
+      "name": "Sandtex",
+      "slug": "sandtex",
+      "image": "/assets/master/brand-sandtex.webp",
+      "width": 480,
+      "height": 150,
+      "source": "Assets/Career and skills/Sandtex.png"
+    }
+  ],
+  "timelineLogos": {
+    "crg": {
+      "image": "/assets/master/logo-crg.webp",
+      "width": 840,
+      "height": 444
+    },
+    "intelligentsia": {
+      "image": "/assets/master/logo-intelligentsia-orb.webp",
+      "width": 611,
+      "height": 570
+    }
+  }
+}
