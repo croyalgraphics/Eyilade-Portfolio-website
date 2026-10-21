@@ -87,6 +87,14 @@
       "width": 480,
       "height": 150,
       "source": "Assets/Career and skills/Sandtex.png"
+    },
+    {
+      "name": "PwC",
+      "slug": "pwc",
+      "image": "/assets/master/brand-pwc.webp",
+      "width": 480,
+      "height": 246,
+      "source": "Assets/Career and skills/PwC_logo_rgb_colour_pos.svg"
     }
   ],
   "timelineLogos": {
@@ -99,6 +107,11 @@
       "image": "/assets/master/logo-intelligentsia-orb.webp",
       "width": 611,
       "height": 570
+    },
+    "pwc": {
+      "image": "/assets/master/brand-pwc.webp",
+      "width": 480,
+      "height": 246
     }
   }
 }

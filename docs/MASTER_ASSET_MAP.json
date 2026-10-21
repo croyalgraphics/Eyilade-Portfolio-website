@@ -1,9 +1,7 @@
 {
   "logo_families": 19,
   "tool_count": 6,
-  "missing": [
-    "PwC logo: not found in Assets/Career and skills"
-  ],
+  "missing": [],
   "choices": [
     "Horizontal lockups selected where supplied, allowing readable moving rows with object-fit:contain.",
     "PPCL PNG selected: purple/charcoal identity matches the portfolio; PPCL SVG is a distinct four-colour variant.",
@@ -675,6 +673,26 @@
       },
       "bytes": 110776,
       "source_sha256": "7604615c681d3594432cb7f1b592657d1cac98acdb60c7e95619cddda19b265f"
+    },
+    {
+      "image": "/assets/master/brand-pwc.webp",
+      "width": 480,
+      "height": 246,
+      "source": "Assets/Career and skills/PwC_logo_rgb_colour_pos.svg",
+      "bytes": 6662,
+      "source_sha256": "fc3baed800491aa441c44e9bb74d55ba6b98bf33b9b0aadee2ecafa15e948a27",
+      "decoded_size": [
+        1800,
+        1160
+      ],
+      "crop_in_decoded_pixels": [
+        245,
+        245,
+        1554,
+        915
+      ],
+      "processing": "SVG viewBox rendered at 1800px width",
+      "lossless": true
     }
   ]
 }

@@ -40,6 +40,8 @@ if((folio.match(/class="logo-lane"/g)||[]).length!==3)errors.push('Expected exac
 if(folio.includes('data-room-mode="gallery"'))errors.push('Paused 3D gallery must not be exposed.');
 for(const font of ['beach-sound.woff2','rubik-variable.woff2'])try{await access(resolve(root,'assets/fonts',font));}catch{errors.push(`Missing supplied font ${font}`);}
 for(const l of logos){if(!l.width||!l.height)errors.push(`Logo dimensions missing: ${l.name}`);if(l.project)try{await access(resolve(root,'.'+l.project,'index.html'));}catch{errors.push(`Invalid logo project: ${l.name}`);}}
+if(assets.brands.length!==4||!['PwC','Dabur','PZ Cussons','Sandtex'].every(name=>assets.brands.some(b=>b.name===name)))errors.push('Expected all four supplied brand logos.');
+if(!assets.timelineLogos.pwc||(home.match(/class="career-logo"[^>]*src="\/assets\/master\/brand-pwc.webp"/g)||[]).length!==3)errors.push('PwC logo must appear on all three career stages.');
 if(!home.includes('tel:+2348119995647'))errors.push('Exact authorised phone missing.');
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`PASS: ${pages.length} pages, ${links} internal references, 19 unique logo assets, image dimensions, page metadata and private-content boundary.`);

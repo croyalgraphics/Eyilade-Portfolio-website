@@ -38,7 +38,7 @@ No character generation or rigging. The supplied full-pose and close-up images a
 - [x] New full-pose hero illustration; no old photo in personal portrait components.
 - [x] Functional desktop, tablet and mobile navigation, with visible keyboard focus.
 - [x] Home contains About, five disciplines, all thirteen career records and exactly six tools.
-- [ ] Four actual brand logos: Dabur, PZ Cussons and Sandtex are supplied; PwC artwork is missing. PwC remains visible as accurate text.
+- [x] Four actual brand logos: PwC, Dabur, PZ Cussons and Sandtex use supplied artwork.
 - [x] Home contains no embedded Works or Logofolio galleries.
 - [x] Two conspicuous page-entry actions reach /work/ and /logofolio/.
 - [x] Three Logofolio rows travel left to right with seamless stable duplication.
@@ -48,7 +48,7 @@ No character generation or rigging. The supplied full-pose and close-up images a
 
 ## Verification completed
 
-- `npm run build` and `npm run check`: PASS. Sixteen HTML pages, 574 internal file references, 19 unique logo assets, supplied fonts, image dimensions, exact contact phone, chronology, tool set and privacy boundaries validated.
+- `npm run build` and `npm run check`: PASS. Sixteen HTML pages, 578 internal file references, 19 unique logo assets, supplied fonts, image dimensions, exact contact phone, chronology, tool set and privacy boundaries validated.
 - HTTP HEAD checks: 94 distinct page/asset/download references, all successful locally.
 - Browser review: Home at 320, 390, 601, 768, 901, 1024, 1280, 1440 and 1920 pixels; key secondary routes at 320, all eleven case studies and the 404 at 390. No document horizontal overflow observed. Full figure remains contained. BeachSound renders as the actual supplied typeface.
 - Desktop career controls reached 13/13; Earlier/Later and the active-state progress are functional. Mobile shows all thirteen records in a vertical rail without horizontal scrolling. Concurrent roles and Ferman records remain separate; PwC stages share one employer grouping.
@@ -60,8 +60,8 @@ No character generation or rigging. The supplied full-pose and close-up images a
 
 Evidence is retained locally under `output/master-redesign/`. Original artwork is unchanged; source-to-export mappings are in `docs/MASTER_ASSET_MAP.json`.
 
-## Outstanding artwork
+## Supplied PwC artwork update
 
-PwC: no matching file exists under the supplied root Assets at verification time. No fabricated replacement is used. Its name and all three job stages are present. The private publication is a review version and preserves owner-only access.
+The newly supplied `Assets/Career and skills/PwC_logo_rgb_colour_pos.svg` now appears in the brand section and all three PwC career stages. Its original colours and proportions are preserved; the optimised transparent WebP is 6,662 bytes. The original SVG is unchanged. The private publication remains an owner-only review version.
 
 BeachSound was supplied by the owner with no accompanying licence document; provenance is recorded in the asset map. Rubik includes its supplied OFL. No new paid service was used.
