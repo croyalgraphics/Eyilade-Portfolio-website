@@ -1,21 +1,13 @@
 import {mountHeroCharacter,mountFooterCharacter} from './character.js';
 import {mountCareer} from './career.js';
 import {mountWorks} from './carousel.js';
+import {mountPreferences} from './preferences.js';
+import {mountNavigation} from './navigation.js';
+import {mountToolkit} from './toolkit.js';
 const root=document.documentElement;
-const systemMotion=matchMedia('(prefers-reduced-motion: reduce)');
-let preference;try{preference=localStorage.getItem('eyilade-motion');}catch{}
-let motionOff=systemMotion.matches||preference==='off';
-const motionButton=document.querySelector('.motion-toggle');
-function setMotion(off,save=false){
- motionOff=systemMotion.matches||off;root.classList.toggle('motion-off',motionOff);
- motionButton?.setAttribute('aria-pressed',String(motionOff));
- motionButton?.setAttribute('aria-label',systemMotion.matches?'Reduced motion follows your device setting':`Turn motion ${motionOff?'on':'off'}`);
- if(motionButton){motionButton.disabled=systemMotion.matches;motionButton.querySelector('.motion-label').textContent=systemMotion.matches?'Reduced motion':`Motion ${motionOff?'off':'on'}`;}
- if(save){preference=off?'off':'on';try{localStorage.setItem('eyilade-motion',preference);}catch{}}
- document.dispatchEvent(new CustomEvent('portfolio:motion',{detail:{off:motionOff}}));
-}
-setMotion(motionOff);motionButton?.addEventListener('click',()=>setMotion(!motionOff,true));
-systemMotion.addEventListener('change',()=>setMotion(preference==='off'));
+let motionOff=root.classList.contains('motion-off');
+document.addEventListener('portfolio:motion',e=>motionOff=e.detail.off);
+mountPreferences();
 const menu=document.querySelector('.mobile-nav');
 const closeMenu=()=>{if(menu)menu.open=false;};
 menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
@@ -38,13 +30,16 @@ function updateScroll(){
 }
 addEventListener('scroll',()=>{if(!scrollPending){scrollPending=true;requestAnimationFrame(updateScroll);}},{passive:true});updateScroll();
 if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}}),{threshold:.07});
- document.querySelectorAll('.project-item,.section-heading,.about-introduction,.brand-lineup,.tool-system,.pathway,.case-details>div,.mark-note').forEach(el=>{if(!motionOff){el.classList.add('will-reveal');observer.observe(el);}});}
+ document.querySelectorAll('.discipline,.section-heading,.about-introduction,.brand-lineup,.tool-system,.pathway,.case-details>div,.mark-note').forEach(el=>{if(!motionOff){el.classList.add('will-reveal');observer.observe(el);}});}
+mountNavigation();
+mountToolkit();
 mountHeroCharacter();
 mountCareer();
 mountWorks();
 mountFooterCharacter();
 const copy=document.querySelector('.copy-email');let copyTimer;
-copy?.addEventListener('click',async()=>{clearTimeout(copyTimer);try{await navigator.clipboard.writeText('eyilade@gmail.com');copy.querySelector('span').textContent='Copied';document.querySelector('.copy-status').textContent='Email address copied.';copyTimer=setTimeout(()=>copy.querySelector('span').textContent='Copy email',2500);}catch{document.querySelector('.copy-status').textContent='Copy unavailable. Email: eyilade@gmail.com';copy.querySelector('span').textContent='eyilade@gmail.com';}});
+copy?.addEventListener('click',async()=>{clearTimeout(copyTimer);copy.classList.remove('is-copied','has-copy-error');try{await navigator.clipboard.writeText('eyilade@gmail.com');copy.classList.add('is-copied');copy.setAttribute('title','Email copied');copy.querySelector('.copy-feedback').textContent='Copied';document.querySelector('.copy-status').textContent='Email address copied.';}catch{copy.classList.add('has-copy-error');copy.querySelector('.copy-feedback').textContent='Select the email to copy';document.querySelector('.copy-status').textContent='Clipboard unavailable. Select and copy eyilade@gmail.com.';}copyTimer=setTimeout(()=>{copy.classList.remove('is-copied','has-copy-error');copy.setAttribute('title','Copy email address');document.querySelector('.copy-status').textContent='';},2500);});
+addEventListener('pagehide',()=>clearTimeout(copyTimer),{once:true});
 const lightbox=document.querySelector('.lightbox');const imageButtons=[...document.querySelectorAll('.image-zoom')];let currentImage=0,lightboxTrigger=null;
 function showImage(index){if(!imageButtons.length)return;currentImage=(index+imageButtons.length)%imageButtons.length;const button=imageButtons[currentImage];const image=lightbox.querySelector('img');lightbox.classList.add('is-loading');lightbox.classList.remove('has-error');lightbox.querySelector('.image-status').textContent='Loading artwork…';image.alt=button.dataset.caption;lightbox.querySelector('#lightbox-caption').textContent=`${button.dataset.caption} · ${currentImage+1} of ${imageButtons.length}`;lightbox.querySelector('.lightbox-original').href=button.dataset.image;image.src=button.dataset.image;}
 if(lightbox){const img=lightbox.querySelector('img');img.addEventListener('load',()=>{lightbox.classList.remove('is-loading');lightbox.querySelector('.image-status').textContent='';});img.addEventListener('error',()=>{lightbox.classList.remove('is-loading');lightbox.classList.add('has-error');lightbox.querySelector('.image-status').textContent='This image could not load. Try opening the full image below.';});

@@ -85,6 +85,14 @@
       "width": 192,
       "height": 75,
       "source": "Assets/Career and skills/Leonardo.Ai-Symbol.png"
+    },
+    {
+      "name": "Canva",
+      "slug": "canva",
+      "image": "/assets/master/tool-canva.webp",
+      "width": 192,
+      "height": 192,
+      "source": "Assets/Career and skills/canva-icon-logo.png"
     }
   ],
   "brands": [
@@ -119,6 +127,22 @@
       "width": 480,
       "height": 246,
       "source": "Assets/Career and skills/PwC_logo_rgb_colour_pos.svg"
+    },
+    {
+      "name": "Carex",
+      "slug": "carex",
+      "image": "/assets/master/brand-carex.webp",
+      "width": 462,
+      "height": 260,
+      "source": "Assets/Career and skills/Carex-Logo.png"
+    },
+    {
+      "name": "IOSA Freight",
+      "slug": "iosa-freight",
+      "image": "/assets/master/brand-iosa-freight.webp",
+      "width": 388,
+      "height": 210,
+      "source": "Assets/Career and skills/IOSA-logo-1.png"
     }
   ],
   "timelineLogos": {
@@ -136,6 +160,30 @@
       "image": "/assets/master/brand-pwc.webp",
       "width": 480,
       "height": 246
+    },
+    "citypartner": {
+      "image": "/assets/master/logo-citypartner.webp",
+      "width": 322,
+      "height": 358,
+      "source": "Assets/Career and skills/Citypartner healthcare.webp"
+    },
+    "redot": {
+      "image": "/assets/master/logo-redot.webp",
+      "width": 383,
+      "height": 400,
+      "source": "Assets/Career and skills/Redot-Icon.jpg"
+    },
+    "ferman": {
+      "image": "/assets/master/logo-ferman.webp",
+      "width": 400,
+      "height": 275,
+      "source": "Assets/Career and skills/Ferman digital.jpeg"
+    },
+    "nysc": {
+      "image": "/assets/master/logo-nysc.webp",
+      "width": 316,
+      "height": 400,
+      "source": "Assets/Career and skills/NYSC_LOGO.svg"
     }
   }
 }

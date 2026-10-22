@@ -2,6 +2,6 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-Okc2uLMXx9wxSvxYzZDbuq3UbFXTa4U45MBt4lZQAZU=' 'sha256-aP3rjQE16zDFVjtLMc44jx17Dns6UfBYRIX5Qe7vnhw='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-NHlA6hq790M3FICrb10/QMfX+d5vR/Qv4QG6iTlvioA=' 'sha256-aP3rjQE16zDFVjtLMc44jx17Dns6UfBYRIX5Qe7vnhw='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'
 /assets/*
   Cache-Control: public, max-age=86400

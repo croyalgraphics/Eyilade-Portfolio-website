@@ -13,11 +13,12 @@
   {
     "id": "nysc",
     "role": "National Youth Service Corps (NYSC)",
-    "company": "Federal Government",
+    "company": "Federal government of Nigeria",
     "start": "2019-06",
     "end": "2020-05",
     "location": "Gusau, Zamfara, Nigeria",
-    "description": "National service in Gusau, Zamfara, Nigeria."
+    "description": "National service in Gusau, Zamfara, Nigeria.",
+    "logoKey": "nysc"
   },
   {
     "id": "running-jack",
@@ -37,7 +38,8 @@
     "end": "2020-12",
     "employmentType": "Full-time",
     "location": "Lagos, Nigeria",
-    "description": "Facilities management and health management consultancy for hospitals."
+    "description": "Facilities management and health management consultancy for hospitals.",
+    "logoKey": "citypartner"
   },
   {
     "id": "ferman",
@@ -47,7 +49,8 @@
     "end": "2021-03",
     "employmentType": "Full-time",
     "location": "Lagos, Nigeria",
-    "description": "Advertising creatives, graphic design and motion graphics for events and social campaigns, including animated assets and GIFs."
+    "description": "Advertising creatives, graphic design and motion graphics for events and social campaigns, including animated assets and GIFs.",
+    "logoKey": "ferman"
   },
   {
     "id": "redot",
@@ -55,7 +58,8 @@
     "company": "Redot Digital Marketing and Consultancy Agency",
     "start": "2021-03",
     "end": "2022-01",
-    "description": "Visual content and campaigns, wireframes, mockups, interactive prototypes and mobile/web content. Collaboration with marketing strategists and creative refinement informed by CTR and impression feedback."
+    "description": "Visual content and campaigns, wireframes, mockups, interactive prototypes and mobile/web content. Collaboration with marketing strategists and creative refinement informed by CTR and impression feedback.",
+    "logoKey": "redot"
   },
   {
     "id": "pwc",
