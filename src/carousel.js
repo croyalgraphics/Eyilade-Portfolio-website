@@ -1,9 +1,11 @@
 export function carouselOffset(i,current,count){let offset=(i-current+count)%count;if(offset>count/2)offset-=count;return offset;}
 export function shouldAutoplay({off,hover,focused,touching,visible,hidden,count}){return !off&&!hover&&!focused&&!touching&&visible&&!hidden&&count>1;}
+export function carouselTiming(dwell,transition){return {dwell:Math.max(8000,Math.min(20000,Number(dwell)||10000)),transition:Math.max(200,Math.min(800,Number(transition)||500))};}
 export function mountWorks(){
  const host=document.querySelector('.works-carousel');if(!host)return;
  const cards=[...host.querySelectorAll('.project-item')],stage=host.querySelector('.project-grid'),previous=host.querySelector('[data-project-step="-1"]'),next=host.querySelector('[data-project-step="1"]'),status=host.querySelector('.carousel-status');
- const delay=Math.max(6000,Math.min(12000,Number(host.dataset.autoplayMs)||7000));
+ const timing=carouselTiming(host.dataset.dwellMs,host.dataset.transitionMs),delay=timing.dwell+timing.transition;
+ host.style.setProperty('--carousel-transition',`${timing.transition}ms`);
  let keyboardMode=true,items=cards,index=0,hover=false,focused=false,touching=false,visible=false,timer=0,start=null,moved=false;
  const off=()=>document.documentElement.classList.contains('motion-off');
  host.classList.add('is-enhanced');stage.tabIndex=0;stage.setAttribute('aria-label','Project carousel. Use left and right arrow keys to browse.');host.querySelector('.carousel-controls').hidden=false;

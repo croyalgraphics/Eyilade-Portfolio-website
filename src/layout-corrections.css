@@ -1,0 +1,37 @@
+/* Targeted follow-up: fewer labels, directly readable career detail and a shared footer baseline. */
+.hero-name-block{padding-bottom:0}.hero-introduction{padding-top:0}.hero-baseline{justify-content:space-between}
+.section-kicker{gap:0}.discipline summary{grid-template-columns:minmax(0,1fr) 34px}.discipline>p{padding-left:20px}
+.process-notes details p{padding-left:0}.process-notes summary{gap:0}
+.pathway{justify-content:center;gap:30px}.pathway-title{margin:0}.pathway-caption{margin-top:auto}.pathway-title{margin-top:auto}
+.pathway-logos{background:#bf9724;color:#20251f}.pathway-logos:hover{background:#caa335}.pathway-logos .pathway-title em{color:inherit}.pathway-logos:focus-visible{outline-color:var(--ink)}
+.work-intro{padding-bottom:40px}.work-intro h1{max-width:1000px}.work-collection{padding-top:30px}
+.works-carousel.is-enhanced .project-item{transition:transform var(--carousel-transition,500ms) var(--ease),opacity calc(var(--carousel-transition,500ms)*.8) var(--ease)}
+/* Approved descriptions belong to the milestone itself. No disclosure, truncation or nested scrolling. */
+.career-event{flex-basis:355px;width:355px;display:block;padding-right:36px}
+.career-event:has(.career-progression){flex-basis:min(80vw,850px);width:min(80vw,850px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);column-gap:40px;row-gap:0;align-content:start;padding-right:70px}
+.career-event-top{grid-column:1/-1}.career-event-main{min-width:0}.career-event h3{min-height:0}.career-company{min-height:0}.career-description{color:var(--panel-muted);font-size:14px;line-height:1.8;padding-top:4px;max-width:42ch;margin-top:20px}.career-event:has(.career-progression) .career-description{margin-top:0}
+.career-track:after{flex-basis:max(0px,calc(100vw - var(--gutter)*2 - min(80vw,850px)))}
+.career-navigation button{width:46px;height:46px;min-height:46px;padding:0;display:grid;place-items:center;border-radius:50%;transition:background .2s,transform .25s var(--ease)}
+.career-navigation button:hover:not(:disabled){transform:translateY(-2px)}.career-navigation button:active:not(:disabled){transform:scale(.93)}.career-navigation button:disabled{opacity:.35}
+.career-scroll-story .career-event{padding-right:30px}.career-scroll-story .career-event:has(.career-progression){padding-right:65px;column-gap:40px}.career-scroll-story .career-event-top{margin-bottom:22px}.career-scroll-story .career-company,.career-scroll-story .career-event h3{min-height:0}.career-scroll-story .career-description{font-size:14px;line-height:1.75}
+.career-vertical .career-event,.career-vertical .career-event:has(.career-progression){display:block;width:auto}.career-vertical .career-description,.career-vertical .career-event:has(.career-progression) .career-description{margin-top:24px;max-width:65ch}
+/* One spanning figure shares the contact row's lower edge; the scale and orientation stay intact. */
+.contact-footer{padding-top:clamp(64px,6vw,110px)}
+.footer-composition{grid-template-columns:minmax(0,1fr) 38%;grid-template-rows:minmax(0,1fr) auto;column-gap:4%;row-gap:40px;align-items:start}
+.contact-top{grid-column:1;grid-row:1;align-self:center}.contact-top>p{font-size:clamp(16px,1.3vw,21px);margin-bottom:28px;max-width:none}
+.contact-title{font-size:clamp(65px,7.5vw,132px);line-height:1.04;letter-spacing:-.025em}.contact-title em{display:inline}
+.footer-character{grid-column:2;grid-row:1/3;align-self:end;justify-self:center;width:100%;max-width:438.66px;aspect-ratio:2/3;margin:0;translate:0 .78125%}
+.footer-character>img{width:100%;height:100%;max-height:none;object-fit:contain}
+.contact-grid{grid-column:1;grid-row:2;display:block;margin:0;min-width:0}.contact-direct>.contact-actions{margin-top:26px;margin-bottom:0}
+.footer-bottom{margin-top:52px}.footer-character-status{position:absolute}
+@media(max-width:1100px){.footer-character{max-width:370px}.contact-title{font-size:7.6vw}.footer-composition{column-gap:3%;row-gap:35px}.hero-name-block{padding-bottom:0}.hero-introduction{padding-top:0}}
+@media(max-width:900px){.career-event{width:auto}.career-vertical .career-event{padding-right:0}.career-event h3{max-width:600px}.footer-character{max-width:320px}.contact-title{font-size:7.4vw}.contact-top>p{font-size:16px}.contact-direct .email-link{font-size:clamp(22px,3vw,29px)}.footer-composition{grid-template-columns:minmax(0,1fr) 38%;row-gap:30px}.contact-grid .contact-actions{gap:10px;flex-wrap:wrap}.contact-action.contact-phone{padding:10px 13px;font-size:12px}}
+@media(max-width:600px){.hero-baseline>span:first-child{margin-right:0}.hero-baseline>span:nth-child(2){display:inline}.hero-baseline{font-size:10px;gap:10px;justify-content:space-between}.hero-introduction{padding:20px 0 10px}
+.discipline summary{grid-template-columns:minmax(0,1fr) 22px;gap:13px}.discipline>p{padding-left:12px}.discipline h3{font-size:clamp(29px,8.5vw,40px)}
+.pathway{min-height:310px;gap:25px}.work-intro{padding-bottom:30px}.work-collection{padding-top:20px}
+.footer-composition{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:24px}.contact-top{grid-column:1;grid-row:1}.contact-title{font-size:clamp(46px,12vw,72px);line-height:1.06}.contact-top>p{font-size:15px;margin-bottom:24px}
+.footer-character{grid-column:1;grid-row:2;width:60vw;max-width:230px;translate:none;margin:0 auto}.contact-grid{grid-column:1;grid-row:3;margin:8px 0 0}.footer-character>img{max-height:none}
+.contact-direct .email-link{font-size:clamp(21px,5.8vw,29px)}.footer-bottom{margin-top:35px}.contact-grid .contact-actions{gap:12px}.contact-action.contact-phone{padding:10px 14px}
+.career-description,.career-scroll-story .career-description{font-size:14px;line-height:1.85}.career-vertical .career-description{margin-top:22px}
+}
+@media(max-width:380px){.contact-title{font-size:44px}.footer-character{width:62vw}.contact-top>p{font-size:14px}.hero-baseline{font-size:9px}.contact-direct .email-link{font-size:21px}}

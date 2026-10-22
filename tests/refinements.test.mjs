@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {nextNavigationState} from '../src/navigation.js';
 import {resolveMotionPreference,resolveThemePreference} from '../src/preferences.js';
 import {careerProgress} from '../src/career.js';
-import {carouselOffset,shouldAutoplay} from '../src/carousel.js';
+import {carouselOffset,shouldAutoplay,carouselTiming} from '../src/carousel.js';
 
 test('preferences use system defaults, while explicit choices survive differing systems',()=>{
  assert.equal(resolveMotionPreference(null,true),true);
@@ -50,4 +50,9 @@ test('carousel wraparound keeps adjacent projects on the correct side',()=>{
  assert.equal(carouselOffset(0,10,11),1);
  assert.equal(carouselOffset(5,5,11),0);
  assert.equal(carouselOffset(0,0,1),0);
+});
+test('carousel viewing time and movement time are independent and bounded',()=>{
+ assert.deepEqual(carouselTiming(undefined,undefined),{dwell:10000,transition:500});
+ assert.deepEqual(carouselTiming('12000','300'),{dwell:12000,transition:300});
+ assert.deepEqual(carouselTiming('90000','50'),{dwell:20000,transition:200});
 });

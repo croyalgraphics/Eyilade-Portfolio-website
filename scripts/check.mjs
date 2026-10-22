@@ -61,5 +61,16 @@ const runtime=await readFile(resolve(root,'main.js'),'utf8');
 if(/blink/i.test(home+runtime)||files.some(p=>p.includes('/assets/character/')&&/blink/i.test(p)))errors.push('Blink must not appear in the public hero, runtime or character assets.');
 if(!home.includes('character-canvas')||!home.includes('character-poster'))errors.push('Hero needs both sprite canvas and static fallback.');
 if(!home.includes('tel:+2348119995647'))errors.push('Exact authorised phone missing.');
+// Latest refinement contract: remove redundant controls while preserving their content and destinations.
+const hero=home.slice(home.indexOf('<section class="cv-hero"'),home.indexOf('</section>'));
+if(/<a\b|hero-actions|hero-download|Meet the person/.test(hero))errors.push('Homepage hero must contain no redundant CTA links or wrappers.');
+if(/career-detail|career-dialog|What I did|My work at PwC/.test(home))errors.push('Career-detail actions/dialog must be removed from all milestones.');
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+for(const c of career)if(c.description&&!home.includes(`<p class="career-description">${escapeHTML(c.description)}</p>`))errors.push(`Approved career description must remain directly readable: ${c.id}`);
+for(const path of pages){const html=await readFile(path,'utf8');if(/class="(?:discipline-number|pathway-number|project-index|case-number|career-order)"|class="section-kicker"><span>\d/.test(html))errors.push(`${path}: decorative numerical identifier remains.`);const footer=html.slice(html.indexOf('<footer'),html.indexOf('</footer>'));if(!footer.includes('Have a project/role in mind?')||!footer.includes('Let’s make<br><em>something together.</em>'))errors.push(`${path}: revised footer invitation missing.`);}
+if(/Brand identities, visual stories,<br>and considered experiences\.|Explore logofolio/.test(works.slice(works.indexOf('<main'),works.indexOf('works-carousel'))))errors.push('Redundant Work intro content remains.');
+if(!works.includes('data-dwell-ms="10000" data-transition-ms="500"'))errors.push('Carousel hold and transition must be configured independently.');
+for(const direction of ['-1','1'])if(!new RegExp(`data-career-step="${direction}"[^>]*><svg`).test(home))errors.push(`Career navigation ${direction} must use an accessible icon.`);
+if(!home.includes('2022–')||!home.includes('01 / 7')||!works.includes('01 / 11'))errors.push('Meaningful dates and navigation counts must be preserved.');
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`PASS: ${pages.length} pages, ${links} internal references, 19 unique logo assets, image dimensions, page metadata and private-content boundary.`);

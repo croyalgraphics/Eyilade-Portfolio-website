@@ -4,18 +4,18 @@ export function careerProgress(y,start,travel,count){
 }
 export function mountCareer(){
  const section=document.querySelector('.career-section');if(!section)return;
- const track=section.querySelector('.career-track'),viewport=section.querySelector('.career-viewport'),pin=section.querySelector('.career-pin'),events=[...track.querySelectorAll('[data-career-id]')],buttons=[...section.querySelectorAll('[data-career-step]')],dialog=section.querySelector('.career-dialog');
+ const track=section.querySelector('.career-track'),viewport=section.querySelector('.career-viewport'),pin=section.querySelector('.career-pin'),events=[...track.querySelectorAll('[data-career-id]')],buttons=[...section.querySelectorAll('[data-career-step]')];
  const eligible=matchMedia('(min-width:1100px) and (min-height:840px)'),vertical=matchMedia('(max-width:900px)');
- let pinned=false,index=0,queued=false,offsets=[],lastOffset=0,pendingTarget=null,drag=null,moved=false,dialogTrigger=null;
+ let pinned=false,index=0,queued=false,offsets=[],lastOffset=0,pendingTarget=null,drag=null,moved=false;
  const off=()=>document.documentElement.classList.contains('motion-off');
  viewport.tabIndex=0;section.querySelector('.career-navigation').hidden=false;
  function geometry(){return {start:section.getBoundingClientRect().top+scrollY-96,travel:section.offsetHeight-pin.offsetHeight};}
  function configure(){
   const before=pinned?careerProgress(scrollY,geometry().start,geometry().travel,events.length).progress:null;
-  const wasPinned=pinned;pinned=eligible.matches&&!off()&&!section.querySelector('details[open]');section.classList.toggle('career-scroll-story',pinned);section.classList.toggle('career-vertical',vertical.matches);
+  const wasPinned=pinned;pinned=eligible.matches&&!off();section.classList.toggle('career-scroll-story',pinned);section.classList.toggle('career-vertical',vertical.matches);
   section.style.setProperty('--career-travel',`${(events.length-1)*280}px`);viewport.scrollLeft=0;track.style.transform='';
   const lead=pinned?Math.max(0,(viewport.clientWidth-events[0].offsetWidth)/2):0;track.style.setProperty('--career-lead',`${lead}px`);
-  offsets=events.map(el=>el.offsetLeft-events[0].offsetLeft);lastOffset=offsets.at(-1)||0;pendingTarget=null;
+  offsets=events.map(el=>el.offsetLeft-events[0].offsetLeft+(pinned?(el.offsetWidth-events[0].offsetWidth)/2:0));lastOffset=offsets.at(-1)||0;pendingTarget=null;
   if(wasPinned&&pinned&&before>0&&before<1){const g=geometry();scrollTo({top:g.start+before*g.travel,behavior:'instant'});}queue();
  }
  function paint(){
@@ -39,8 +39,5 @@ export function mountCareer(){
  viewport.addEventListener('pointerdown',e=>{if(e.isPrimary&&!vertical.matches){drag={id:e.pointerId,x:e.clientX,y:e.clientY,windowY:scrollY,left:viewport.scrollLeft,active:false};moved=false;}});
  viewport.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!drag.active&&Math.abs(dx)>18&&Math.abs(dx)>Math.abs(dy)*1.3){drag.active=true;viewport.setPointerCapture(e.pointerId);pendingTarget=null;}if(!drag.active)return;e.preventDefault();moved=true;if(pinned){const g=geometry();scrollTo({top:Math.max(g.start,Math.min(g.start+g.travel,drag.windowY-dx/Math.max(1,lastOffset)*g.travel)),behavior:'instant'});}else viewport.scrollLeft=drag.left-dx;});
  const release=()=>{if(drag&&viewport.hasPointerCapture(drag.id))viewport.releasePointerCapture(drag.id);drag=null;};viewport.addEventListener('pointerup',release);viewport.addEventListener('pointercancel',release);viewport.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);
- // Keep the section's geometry stable while long descriptions are read.
- section.querySelectorAll('.career-detail summary').forEach(summary=>summary.addEventListener('click',e=>{if(!pinned||!dialog)return;e.preventDefault();const event=summary.closest('[data-career-id]');dialogTrigger=summary;dialog.querySelector('.career-dialog-company').textContent=event.querySelector('.career-company').textContent;dialog.querySelector('h2').textContent=event.querySelector('h3').textContent;dialog.querySelector('.career-dialog-description').textContent=summary.parentElement.querySelector('p').textContent;dialog.showModal();document.body.classList.add('viewer-open');}));
- dialog?.querySelector('.career-dialog-close').addEventListener('click',()=>dialog.close());dialog?.addEventListener('close',()=>{document.body.classList.remove('viewer-open');dialogTrigger?.focus({preventScroll:true});});dialog?.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
  viewport.addEventListener('scroll',()=>{if(!pinned)queue();},{passive:true});addEventListener('scroll',queue,{passive:true});addEventListener('resize',configure,{passive:true});document.addEventListener('portfolio:motion',configure);document.fonts.ready.then(configure);configure();
 }
