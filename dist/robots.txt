@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://eyilade-oridamisi.bubblydill512.chatgpt.site/sitemap.xml
+Sitemap: https://eyilade-oridamisi-portfolio.bubblydill512.chatgpt.site/sitemap.xml

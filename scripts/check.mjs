@@ -72,5 +72,15 @@ if(/Brand identities, visual stories,<br>and considered experiences\.|Explore lo
 if(!works.includes('data-dwell-ms="10000" data-transition-ms="500"'))errors.push('Carousel hold and transition must be configured independently.');
 for(const direction of ['-1','1'])if(!new RegExp(`data-career-step="${direction}"[^>]*><svg`).test(home))errors.push(`Career navigation ${direction} must use an accessible icon.`);
 if(!home.includes('2022–')||!home.includes('01 / 7')||!works.includes('01 / 11'))errors.push('Meaningful dates and navigation counts must be preserved.');
+// Beans Central: the expanded project must remain a complete, original-asset-led case study.
+const beans=await readFile(resolve(root,'work/beans-central/index.html'),'utf8');
+const beansManifest=JSON.parse(await readFile(resolve(root,'assets/beans-central/artwork-manifest.json'),'utf8'));
+for(const dish of beansManifest.dishes){
+ for(const file of [`food-${dish.slug}.webp`,...['640','1280','1600'].map(size=>`campaign-${dish.slug}-${size}.webp`)])try{await access(resolve(root,'assets/beans-central',file));}catch{errors.push(`Missing Beans Central dish artwork: ${file}`);}
+ if(!beans.includes(`data-dish="${dish.slug}"`)||!beans.includes(`campaign-${dish.slug}-1280.webp`))errors.push(`Beans Central dish missing from case study: ${dish.name}`);
+}
+for(const a of beansManifest.artworks)for(const size of [640,1280,1600])try{await access(resolve(root,'assets/beans-central',`${a.name}-${size}.webp`));}catch{errors.push(`Missing Beans Central responsive export: ${a.name}-${size}`);}
+if(beansManifest.dishes.length!==6||!beans.includes('AI-assisted photography and mockups')||!beans.includes('data-beans-player'))errors.push('Beans Central must contain six dishes, truthful concept context and the motion sequence.');
+if(/09076468999|fast delivery|healthy|nutritiously/i.test(beans))errors.push('Unverified original business claims/order number may not appear in the new Beans Central case.');
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`PASS: ${pages.length} pages, ${links} internal references, 19 unique logo assets, image dimensions, page metadata and private-content boundary.`);

@@ -320,5 +320,17 @@
       1920,
       1080
     ]
+  },
+  {
+    "asset": "beans-central-cover",
+    "source_size": [
+      1200,
+      1100
+    ],
+    "source": "Original campaign composition; imagegen food scene plus supplied exact logo and Fredoka typography",
+    "derivatives": [
+      "beans-central-cover-640.webp",
+      "beans-central-cover-1280.webp"
+    ]
   }
 ]

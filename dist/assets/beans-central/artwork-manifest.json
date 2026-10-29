@@ -1,0 +1,229 @@
+{
+  "artworks": [
+    {
+      "name": "campaign-honey-akara",
+      "width": 900,
+      "height": 1125,
+      "title": "Honey Akara \u2014 original campaign extension",
+      "kind": "original vector artwork",
+      "svg": "campaign-honey-akara.svg"
+    },
+    {
+      "name": "campaign-beans-porridge",
+      "width": 900,
+      "height": 1125,
+      "title": "Beans Porridge \u2014 original campaign extension",
+      "kind": "original vector artwork",
+      "svg": "campaign-beans-porridge.svg"
+    },
+    {
+      "name": "campaign-ewa-agoyin",
+      "width": 900,
+      "height": 1125,
+      "title": "Ewa Agoyin \u2014 original campaign extension",
+      "kind": "original vector artwork",
+      "svg": "campaign-ewa-agoyin.svg"
+    },
+    {
+      "name": "campaign-rice-and-beans",
+      "width": 900,
+      "height": 1125,
+      "title": "Rice & Beans \u2014 original campaign extension",
+      "kind": "original vector artwork",
+      "svg": "campaign-rice-and-beans.svg"
+    },
+    {
+      "name": "campaign-waakye",
+      "width": 900,
+      "height": 1125,
+      "title": "Waakye \u2014 original campaign extension",
+      "kind": "original vector artwork",
+      "svg": "campaign-waakye.svg"
+    },
+    {
+      "name": "campaign-moi-moi",
+      "width": 900,
+      "height": 1125,
+      "title": "Moi Moi \u2014 original campaign extension",
+      "kind": "original vector artwork",
+      "svg": "campaign-moi-moi.svg"
+    },
+    {
+      "name": "menu",
+      "width": 1200,
+      "height": 1600,
+      "title": "Beans Central \u2014 six-dish menu concept",
+      "kind": "original vector artwork",
+      "svg": "menu.svg"
+    },
+    {
+      "name": "graphic-language",
+      "width": 1600,
+      "height": 1000,
+      "title": "Ingredient illustrations and plate-line graphic language",
+      "kind": "original vector artwork",
+      "svg": "graphic-language.svg"
+    },
+    {
+      "name": "packaging-artwork",
+      "width": 1600,
+      "height": 1000,
+      "title": "Original bowl sleeve, carton panel, seal and tissue print artwork",
+      "kind": "original vector artwork",
+      "svg": "packaging-artwork.svg"
+    },
+    {
+      "name": "carrier-artwork",
+      "width": 900,
+      "height": 1125,
+      "title": "Beans Central carrier bag \u2014 flat artwork",
+      "kind": "original vector artwork",
+      "svg": "carrier-artwork.svg"
+    },
+    {
+      "name": "typography",
+      "width": 1600,
+      "height": 1000,
+      "title": "Fredoka display and Quicksand body typography",
+      "kind": "original vector artwork",
+      "svg": "typography.svg"
+    },
+    {
+      "name": "hero-campaign",
+      "width": 1600,
+      "height": 1067,
+      "title": "There\u2019s more to beans \u2014 hero food campaign concept",
+      "kind": "original vector artwork",
+      "svg": "hero-campaign.svg"
+    },
+    {
+      "name": "project-cover",
+      "width": 1200,
+      "height": 1100,
+      "title": "Beans Central \u2014 dedicated portfolio project cover",
+      "kind": "original vector artwork",
+      "svg": "project-cover.svg"
+    },
+    {
+      "name": "digital-stories",
+      "width": 1600,
+      "height": 1100,
+      "title": "Vertical campaign and six-dish digital story concepts",
+      "kind": "original vector artwork",
+      "svg": "digital-stories.svg"
+    },
+    {
+      "name": "meal-scene",
+      "width": 1536,
+      "height": 1024,
+      "title": "meal-scene",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "packaging-family",
+      "width": 1536,
+      "height": 1024,
+      "title": "packaging-family",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "carry-bag",
+      "width": 1122,
+      "height": 1402,
+      "title": "carry-bag",
+      "kind": "AI-assisted concept visualisation"
+    }
+  ],
+  "dishes": [
+    {
+      "slug": "honey-akara",
+      "name": "Honey Akara",
+      "headline": [
+        "The golden",
+        "hour."
+      ],
+      "desc": [
+        "Golden bean fritters.",
+        "Crisp outside. Soft inside."
+      ],
+      "bg": "#E0012E",
+      "fg": "#FFF7E7"
+    },
+    {
+      "slug": "beans-porridge",
+      "name": "Beans Porridge",
+      "headline": [
+        "Comfort,",
+        "by the bowl."
+      ],
+      "desc": [
+        "Beans, palm oil, pepper.",
+        "A familiar kind of comfort."
+      ],
+      "bg": "#DB8A1F",
+      "fg": "#2D120E"
+    },
+    {
+      "slug": "ewa-agoyin",
+      "name": "Ewa Agoyin",
+      "headline": [
+        "Soft beans.",
+        "Bold company."
+      ],
+      "desc": [
+        "Creamy beans.",
+        "Caramelised pepper sauce."
+      ],
+      "bg": "#FFF7E7",
+      "fg": "#E0012E"
+    },
+    {
+      "slug": "rice-and-beans",
+      "name": "Rice & Beans",
+      "headline": [
+        "Better",
+        "together."
+      ],
+      "desc": [
+        "Two everyday favourites.",
+        "One very good plate."
+      ],
+      "bg": "#2D120E",
+      "fg": "#FFF7E7"
+    },
+    {
+      "slug": "waakye",
+      "name": "Waakye",
+      "headline": [
+        "A bowl with",
+        "more to say."
+      ],
+      "desc": [
+        "Rice, beans and all",
+        "the good company."
+      ],
+      "bg": "#E0012E",
+      "fg": "#FFF7E7"
+    },
+    {
+      "slug": "moi-moi",
+      "name": "Moi Moi",
+      "headline": [
+        "A softer",
+        "side of beans."
+      ],
+      "desc": [
+        "Steamed bean pudding.",
+        "Comfort in another form."
+      ],
+      "bg": "#FFF7E7",
+      "fg": "#2D120E"
+    }
+  ],
+  "palette": {
+    "red": "#E0012E",
+    "ochre": "#DB8A1F",
+    "brown": "#2D120E",
+    "paper": "#FFF7E7"
+  }
+}
