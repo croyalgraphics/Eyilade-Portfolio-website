@@ -1,16 +1,19 @@
 import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 
 export async function lizcraftCaseStudy(next,esc){
  const base='/assets/lizcraft/';
  const manifest=JSON.parse(await readFile('dist/assets/lizcraft/artwork-manifest.json','utf8'));
  const assets=new Map(manifest.artworks.map(x=>[x.name,x]));
+ const revisions=new Map(await Promise.all(manifest.artworks.map(async a=>[a.name,createHash('sha256').update(await readFile('dist/assets/lizcraft/'+a.name+'-1280.webp')).digest('hex').slice(0,10)])));
  const picture=(name,alt,{priority=false,sizes='(max-width:700px) 100vw, 90vw',cls=''}={})=>{
   const a=assets.get(name);if(!a)throw new Error(`LizCraft artwork missing: ${name}`);
   const largest=a.kind==='original application artwork'?1800:Math.min(1800,a.width);
-  const options=[640,1280,1800].map(n=>[n,Math.min(n,largest)]).filter((x,i,all)=>all.findIndex(y=>y[1]===x[1])===i).map(([n,w])=>`${base}${name}-${n}.webp ${w}w`).join(', ');
-  return `<img class="${cls}" src="${base}${name}-1280.webp" srcset="${options}" sizes="${sizes}" width="${a.width}" height="${a.height}" alt="${esc(alt)}" ${priority?'fetchpriority="high"':'loading="lazy"'} decoding="async">`;
+  const q=`?v=${revisions.get(name)}`;
+  const options=[640,1280,1800].map(n=>[n,Math.min(n,largest)]).filter((x,i,all)=>all.findIndex(y=>y[1]===x[1])===i).map(([n,w])=>`${base}${name}-${n}.webp${q} ${w}w`).join(', ');
+  return `<img class="${cls}" src="${base}${name}-1280.webp${q}" srcset="${options}" sizes="${sizes}" width="${a.width}" height="${a.height}" alt="${esc(alt)}" ${priority?'fetchpriority="high"':'loading="lazy"'} decoding="async">`;
  };
- const figure=(name,alt,caption='',cls='')=>`<figure class="lc-art ${cls}"><button class="image-zoom" data-image="${base}${name}-1800.webp" data-caption="${esc(alt)}" aria-label="Enlarge ${esc(alt)}">${picture(name,alt,{sizes:cls.includes('lc-half')?'(max-width:700px) 100vw, 45vw':cls.includes('lc-poster')?'(max-width:700px) 90vw, 30vw':undefined})}<span class="lc-enlarge" aria-hidden="true">View detail +</span></button>${caption?`<figcaption>${caption}</figcaption>`:''}</figure>`;
+ const figure=(name,alt,caption='',cls='')=>`<figure class="lc-art ${cls}"><button class="image-zoom" data-image="${base}${name}-1800.webp?v=${revisions.get(name)}" data-caption="${esc(alt)}" aria-label="Enlarge ${esc(alt)}">${picture(name,alt,{sizes:cls.includes('lc-half')?'(max-width:700px) 100vw, 45vw':cls.includes('lc-poster')?'(max-width:700px) 90vw, 30vw':undefined})}<span class="lc-enlarge" aria-hidden="true">View detail +</span></button>${caption?`<figcaption>${caption}</figcaption>`:''}</figure>`;
  const heading=(label,title,copy='')=>`<header class="lc-section-heading lc-reveal"><p class="lc-kicker">${label}</p><h2>${title}</h2>${copy?`<p>${copy}</p>`:''}</header>`;
  let pattern=await readFile('dist/assets/lizcraft/contour-pattern-original.svg','utf8');
  pattern=pattern.replace('<svg ','<svg class="lc-live-contour" aria-hidden="true" ').replace(/<path\b([^>]*fill="#065784"[^>]*)>/g,'<path class="lc-contour-ring" $1>');

@@ -15,6 +15,7 @@ The broader art direction is contemporary, colourful and human, with African, wh
 - All 9 unrelated project HTML files match the opening source exactly.
 - Browser review at 1440x1000, 820x1180, 390x844, 360x740 and 320x568: no horizontal overflow. Both mobile heroes reviewed; manual scenes, viewer, parcel, range inputs and motion preference checked. Dark mode preserves brand artwork colours. No browser warnings/errors observed in the reviewed session.
 - Independent asset review: 10 Pure Hive compositions, 13 distributed SVGs and 48 WebPs checked. Eight LizCraft scenes and four refreshed compositions reviewed. Clipping, hidden guide artwork and image-proportion defects found during review were corrected before delivery.
+- Changed artwork and cover URLs include content versions so returning visitors receive the refreshed imagery while retaining browser caching.
 - Original Illustrator source hashes remain unchanged. New concepts are not manufacturing proofs or approved real product claims.
 
 ## Deliverables

@@ -1,16 +1,19 @@
 import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 
 export async function purehiveCaseStudy(next,esc){
  const base='/assets/purehive/';
  const manifest=JSON.parse(await readFile('dist/assets/purehive/artwork-manifest.json','utf8'));
  const assets=new Map(manifest.artworks.map(a=>[a.name,a]));
+ const revisions=new Map(await Promise.all(manifest.artworks.map(async a=>[a.name,createHash('sha256').update(await readFile('dist/assets/purehive/'+a.name+'-1280.webp')).digest('hex').slice(0,10)])));
  const picture=(name,alt,{priority=false,sizes='(max-width:700px) 100vw, 90vw'}={})=>{
   const a=assets.get(name);if(!a)throw Error(`Missing Pure Hive asset: ${name}`);
   const max=a.kind==='original concept artwork'?1800:Math.min(1800,a.width);
-  const srcset=[640,1280,1800].map(n=>[n,Math.min(n,max)]).filter((a,i,all)=>all.findIndex(b=>b[1]===a[1])===i).map(([n,w])=>`${base}${name}-${n}.webp ${w}w`).join(', ');
-  return `<img src="${base}${name}-1280.webp" srcset="${srcset}" sizes="${sizes}" width="${a.width}" height="${a.height}" alt="${esc(alt)}" ${priority?'fetchpriority="high"':'loading="lazy"'} decoding="async">`;
+  const q=`?v=${revisions.get(name)}`;
+  const srcset=[640,1280,1800].map(n=>[n,Math.min(n,max)]).filter((a,i,all)=>all.findIndex(b=>b[1]===a[1])===i).map(([n,w])=>`${base}${name}-${n}.webp${q} ${w}w`).join(', ');
+  return `<img src="${base}${name}-1280.webp${q}" srcset="${srcset}" sizes="${sizes}" width="${a.width}" height="${a.height}" alt="${esc(alt)}" ${priority?'fetchpriority="high"':'loading="lazy"'} decoding="async">`;
  };
- const figure=(name,alt,caption='',cls='')=>`<figure class="ph-art ${cls}"><button class="image-zoom" data-image="${base}${name}-1800.webp" data-caption="${esc(alt)}" aria-label="Enlarge ${esc(alt)}">${picture(name,alt,{sizes:cls.includes('ph-half')?'(max-width:700px) 100vw, 44vw':cls.includes('ph-poster')?'(max-width:700px) 90vw, 30vw':undefined})}<span class="ph-enlarge" aria-hidden="true">View detail +</span></button>${caption?`<figcaption>${caption}</figcaption>`:''}</figure>`;
+ const figure=(name,alt,caption='',cls='')=>`<figure class="ph-art ${cls}"><button class="image-zoom" data-image="${base}${name}-1800.webp?v=${revisions.get(name)}" data-caption="${esc(alt)}" aria-label="Enlarge ${esc(alt)}">${picture(name,alt,{sizes:cls.includes('ph-half')?'(max-width:700px) 100vw, 44vw':cls.includes('ph-poster')?'(max-width:700px) 90vw, 30vw':undefined})}<span class="ph-enlarge" aria-hidden="true">View detail +</span></button>${caption?`<figcaption>${caption}</figcaption>`:''}</figure>`;
  const heading=(label,title,copy='')=>`<header class="ph-heading ph-reveal"><p class="ph-kicker">${label}</p><h2>${title}</h2>${copy?`<p>${copy}</p>`:''}</header>`;
  const scenes=[['breakfast-modern','Together at the table.','Good mornings are for sharing.','A shared breakfast in a contemporary home, with fictional African, white and Asian models.'],['tea-modern','A little time for yourself.','A pause, a pour, a favourite cup.','An everyday tea moment with a fictional Asian model.'],['pour-modern','Make it golden.','The finishing touch.','A close look at honey, fruit, ceramic and steel.']];
  return `<article class="purehive-case">
