@@ -95,6 +95,14 @@ for(const a of pureManifest.artworks)for(const size of [640,1280,1800])try{await
 if(!pure.includes('AI-assisted visualisations with fictional models')||[0,1,2].some(i=>!pure.includes(`data-ph-scene-select="${i}"`)))throw Error('Pure Hive concept context or scene controls missing');
 for(const name of ['dress-modern','woman-modern','man-modern','family-modern','objects-modern','making-modern'])if(!liz.includes(`/assets/lizcraft/${name}-1280.webp`))throw Error(`Missing LizCraft human or collection scene: ${name}`);
 if(files.some(p=>p.includes('/assets/purehive/')&&/american.?typewriter/i.test(p)))throw Error('Apple font may not be redistributed');
+const feasts=await readFile(resolve(root,'work/feasts-and-flavours/index.html'),'utf8');
+const feastsManifest=JSON.parse(await readFile(resolve(root,'assets/feasts/artwork-manifest.json'),'utf8'));
+for(const a of feastsManifest.artworks)for(const size of [640,1280,1800])try{await access(resolve(root,'assets/feasts',`${a.name}-${size}.webp`));}catch{errors.push(`Missing Feasts responsive export: ${a.name}-${size}`);}
+for(const name of ['owanbe-service','wedding-reception','birthday-celebration','professional-service','shared-table','pass-a-bowl','curry-bowl','rice-chicken','crispy-chicken','guest-table','takeaway-service'])if(!feasts.includes(`/assets/feasts/${name}-1280.webp`))errors.push(`Missing Feasts event or preserved lifestyle scene: ${name}`);
+if(!feasts.includes('Professional catering')||!feasts.includes('fictional models')||[0,1,2].some(i=>!feasts.includes(`data-ff-select="${i}"`)))errors.push('Feasts catering context, scene controls or concept provenance missing.');
+if((feasts.match(/class="ff-rosette-part"/g)||[]).length!==8)errors.push('Feasts must preserve the eight original rosette paths.');
+if(/09076468999|fast delivery|healthy|nutritiously/i.test(feasts))errors.push('Unverified business claims or old ordering number in new Feasts case.');
+if(files.some(p=>p.includes('/assets/feasts/')&&/funky.?bird.*\.(ttf|otf|woff2?)$/i.test(p)))errors.push('Personal-use Funky Bird font may not be redistributed.');
 
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`PASS: ${pages.length} pages, ${links} internal references, 19 unique logo assets, image dimensions, page metadata and private-content boundary.`);

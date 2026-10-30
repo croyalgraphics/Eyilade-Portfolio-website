@@ -1,9 +1,11 @@
 """Package selected contemporary concept artwork, preserving prior deliveries."""
 from pathlib import Path
-import zipfile,json,hashlib
+import zipfile,json,hashlib,sys
 R=Path(__file__).resolve().parents[1]
 sets=[('purehive','Pure-Hive-Honey-Artwork-2026-10-30.zip',['jar-modern','breakfast-modern','tea-modern','gift-modern','pour-modern'],['logo-horizontal-colour-original','logo-vertical-colour-original','icon-colour-original']),('lizcraft','LizCraft-Modern-Collection-2026-10-30.zip',['dress-modern','woman-modern','man-modern','family-modern','objects-modern','making-modern','parcel-open-modern','parcel-closed-modern','woven-label'],['logo-horizontal-colour-original','logo-vertical-colour-original','icon-colour-original','contour-pattern-original'])]
+sets.append(('feasts','Feasts-and-Flavours-Catering-Artwork-2026-10-30.zip',['owanbe-service','wedding-reception','professional-service','birthday-celebration','guest-table','takeaway-service','shared-table','rice-chicken','crispy-chicken','curry-bowl','pass-a-bowl'],['logo-colour-original','logo-white-original','icon-red-original','icon-white-original']))
 for brand,name,photos,identity in sets:
+ if len(sys.argv)>1 and brand!=sys.argv[1]:continue
  root=R/'artwork'/brand;out=R/'output'/brand/name;out.parent.mkdir(parents=True,exist_ok=True)
  with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
   for p in sorted((root/'masters').glob('*')):

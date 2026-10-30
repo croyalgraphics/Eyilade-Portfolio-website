@@ -1,0 +1,172 @@
+{
+  "palette": {
+    "red": "#E0012E",
+    "charcoal": "#333333",
+    "supporting_pink": "#FBE7ED"
+  },
+  "artworks": [
+    {
+      "name": "identity-study",
+      "width": 1600,
+      "height": 1050,
+      "kind": "original concept artwork",
+      "title": "Feasts and Flavours exact original identity and palette"
+    },
+    {
+      "name": "pattern-language",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Original rosette repeated as a supporting border and pattern"
+    },
+    {
+      "name": "menu-face",
+      "width": 1000,
+      "height": 1400,
+      "kind": "original concept artwork",
+      "title": "Feasts table menu presentation concept without prices or claims"
+    },
+    {
+      "name": "wrap-and-seals",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Catering tray wrap, food band and closure seal artwork"
+    },
+    {
+      "name": "guest-details",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Feasts guest table card and invitation to the meal concept"
+    },
+    {
+      "name": "service-illustrations",
+      "width": 1600,
+      "height": 1000,
+      "kind": "original concept artwork",
+      "title": "Original catering-service line illustration family"
+    },
+    {
+      "name": "type-study",
+      "width": 1600,
+      "height": 1050,
+      "kind": "original concept artwork",
+      "title": "Fredoka supporting typography and exact source wordmark"
+    },
+    {
+      "name": "campaign-curry",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Feasts Curry bowl campaign concept"
+    },
+    {
+      "name": "campaign-rice",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Feasts Rice & chicken campaign concept"
+    },
+    {
+      "name": "campaign-crunch",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Feasts Crispy chicken campaign concept"
+    },
+    {
+      "name": "event-campaign",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Feasts wedding and event service campaign concept"
+    },
+    {
+      "name": "digital-stories",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Feasts event-led digital story concepts"
+    },
+    {
+      "name": "project-cover",
+      "width": 1200,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Feasts dedicated event-catering portfolio cover"
+    },
+    {
+      "name": "birthday-celebration",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "crispy-chicken",
+      "width": 1448,
+      "height": 1086,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "curry-bowl",
+      "width": 1448,
+      "height": 1086,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "guest-table",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "owanbe-service",
+      "width": 1902,
+      "height": 827,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "pass-a-bowl",
+      "width": 1122,
+      "height": 1402,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "professional-service",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "rice-chicken",
+      "width": 1448,
+      "height": 1086,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "shared-table",
+      "width": 1902,
+      "height": 827,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "takeaway-service",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "wedding-reception",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "identity-guide-original",
+      "width": 4268,
+      "height": 4268,
+      "kind": "original supplied identity guide"
+    }
+  ]
+}
