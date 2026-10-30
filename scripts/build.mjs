@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { build } from 'esbuild';
 import {icon} from './ui-icons.mjs';
 import {beansCaseStudy} from './beans-case-study.mjs';
+import {lizcraftCaseStudy} from './lizcraft-case-study.mjs';
 import {resolveMotionPreference,resolveThemePreference} from '../src/preferences.js';
 const read=p=>readFile(p,'utf8');
 const projects=JSON.parse(await read('content/projects.json'));
@@ -55,7 +56,7 @@ await page('/logofolio/','Logofolio — Eyilade Oridamisi','Original logo design
 for(const[i,p]of projects.entries()){
  const next=projects[(i+1)%projects.length];
  const content=`<article class="case-study"><section class="case-intro section-pad"><a class="case-back text-link" href="/work/">All works</a><div class="case-heading"><div><p class="page-label">${esc(p.type)}</p><h1>${esc(p.name)}</h1></div></div><p class="case-line">${esc(p.line)}</p></section><div class="case-cover" style="background:${p.color}">${image(p.image,p.name+' — selected design work','',true)}</div><section class="case-story section-pad"><p class="case-summary">${esc(p.intro)}</p><dl><dt>Design focus</dt><dd>${esc(p.focus)}</dd><dt>By</dt><dd>Eyilade Oridamisi</dd>${p.category==='3D'?'<dt>Context</dt><dd>Independent practice studies</dd>':''}</dl></section>${p.video?'<section class="video-piece section-pad"><video controls playsinline preload="metadata" poster="/assets/birthday-still-1280.webp" aria-label="Personal birthday motion design"><source src="/assets/birthday-motion.mp4" type="video/mp4"></video><p>A birthday in motion · Personal motion design · 00:10</p></section>':''}<div class="case-gallery section-pad">${p.gallery.map((a,j)=>`<figure class="case-figure ${j%3===0?'wide':''}"><button class="image-zoom" data-image="/assets/${a}-1280.webp" data-caption="${esc(p.name)} — detail ${j+1}" aria-label="Enlarge ${esc(p.name)} design detail ${j+1}">${image(a,p.name+' — design detail '+(j+1),'',false,j%3===0?'(max-width:600px) calc(100vw - 40px), 88vw':'(max-width:600px) calc(100vw - 40px), 44vw')}<span aria-hidden="true">${icon('plus')}</span></button></figure>`).join('')}</div><section class="case-details section-pad">${p.details.map(([h,t])=>`<div><h2>${esc(h)}</h2><p>${esc(t)}</p></div>`).join('')}</section><a class="next-project section-pad" href="/work/${next.slug}/"><span>Next project</span><span>${esc(next.name)}</span></a></article>`;
- await page('/work/'+p.slug+'/',p.name+' — Eyilade Oridamisi',p.line+' '+p.type+' by Eyilade Oridamisi.',p.slug==='beans-central'?beansCaseStudy(next,esc):content,'work');
+ await page('/work/'+p.slug+'/',p.name+' — Eyilade Oridamisi',p.line+' '+p.type+' by Eyilade Oridamisi.',p.slug==='beans-central'?beansCaseStudy(next,esc):p.slug==='lizcraft'?await lizcraftCaseStudy(next,esc):content,'work');
 }
 await page('/404.html','Page not found — Eyilade Oridamisi','Return to the portfolio of Eyilade Oridamisi.','<section class="not-found section-pad"><p class="page-label">404</p><h1>A little<br><em>off the page.</em></h1><a class="button primary" href="/">Back home</a></section>');
 await build({entryPoints:['src/main.js'],outfile:'dist/main.js',bundle:true,minify:true,format:'esm',target:'es2022'});

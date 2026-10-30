@@ -82,5 +82,12 @@ for(const dish of beansManifest.dishes){
 for(const a of beansManifest.artworks)for(const size of [640,1280,1600])try{await access(resolve(root,'assets/beans-central',`${a.name}-${size}.webp`));}catch{errors.push(`Missing Beans Central responsive export: ${a.name}-${size}`);}
 if(beansManifest.dishes.length!==6||!beans.includes('AI-assisted photography and mockups')||!beans.includes('data-beans-player'))errors.push('Beans Central must contain six dishes, truthful concept context and the motion sequence.');
 if(/09076468999|fast delivery|healthy|nutritiously/i.test(beans))errors.push('Unverified original business claims/order number may not appear in the new Beans Central case.');
+const liz=await readFile(resolve(root,'work/lizcraft/index.html'),'utf8');
+const lizManifest=JSON.parse(await readFile(resolve(root,'assets/lizcraft/artwork-manifest.json'),'utf8'));
+for(const a of lizManifest.artworks)for(const size of [640,1280,1800])try{await access(resolve(root,'assets/lizcraft',`${a.name}-${size}.webp`));}catch{errors.push(`Missing LizCraft responsive export: ${a.name}-${size}`);}
+if((liz.match(/class="lc-contour-ring"/g)||[]).length!==8)errors.push('LizCraft must animate the eight actual original contour paths.');
+for(const text of ['Hand wash gently','Use mild soap','Do not bleach','Do not machine wash','Do not iron'])if(!liz.includes(`<li>${text}</li>`))errors.push(`LizCraft care instruction missing: ${text}`);
+if(!liz.includes('data-parcel-select="parcel-closed"')||!liz.includes('data-parcel-select="parcel-open"')||!liz.includes('AI-assisted visualisations'))errors.push('LizCraft parcel controls or truthful concept context missing.');
+if(files.some(p=>p.includes('/assets/lizcraft/')&&/sf.?compact/i.test(p)))errors.push('SF Compact may not be redistributed with the new LizCraft assets.');
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`PASS: ${pages.length} pages, ${links} internal references, 19 unique logo assets, image dimensions, page metadata and private-content boundary.`);

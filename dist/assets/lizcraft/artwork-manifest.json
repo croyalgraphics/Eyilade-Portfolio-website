@@ -1,0 +1,199 @@
+{
+  "palette": {
+    "blue": "#065784",
+    "gold": "#D2A857",
+    "paper": "#F5EFE3"
+  },
+  "artworks": [
+    {
+      "name": "signature-study",
+      "width": 1600,
+      "height": 1000,
+      "title": "LizCraft original signature, monogram and palette",
+      "kind": "original application artwork",
+      "master": "signature-study.svg"
+    },
+    {
+      "name": "type-study",
+      "width": 1600,
+      "height": 1100,
+      "title": "LizCraft Fraunces display typography study",
+      "kind": "original application artwork",
+      "master": "type-study.svg"
+    },
+    {
+      "name": "contour-study",
+      "width": 1600,
+      "height": 1100,
+      "title": "Two scales of the exact original contour pattern",
+      "kind": "original application artwork",
+      "master": "contour-study.svg"
+    },
+    {
+      "name": "thank-you-front",
+      "width": 1500,
+      "height": 1000,
+      "title": "LizCraft thank-you card front concept",
+      "kind": "original application artwork",
+      "master": "thank-you-front.svg"
+    },
+    {
+      "name": "thank-you-back",
+      "width": 1500,
+      "height": 1000,
+      "title": "LizCraft thank-you card back with the original maker\u2019s message",
+      "kind": "original application artwork",
+      "master": "thank-you-back.svg"
+    },
+    {
+      "name": "care-foldout",
+      "width": 1800,
+      "height": 1050,
+      "title": "LizCraft care foldout with all five original care instructions",
+      "kind": "original application artwork",
+      "master": "care-foldout.svg"
+    },
+    {
+      "name": "hangtags",
+      "width": 1500,
+      "height": 1200,
+      "title": "LizCraft contour-shaped hangtag front and reverse concept",
+      "kind": "original application artwork",
+      "master": "hangtags.svg"
+    },
+    {
+      "name": "woven-label-artwork",
+      "width": 1600,
+      "height": 1000,
+      "title": "LizCraft woven label and small-format signature artwork",
+      "kind": "original application artwork",
+      "master": "woven-label-artwork.svg"
+    },
+    {
+      "name": "wrap-and-seal",
+      "width": 1600,
+      "height": 1100,
+      "title": "LizCraft original tissue repeat, seal and parcel band artwork",
+      "kind": "original application artwork",
+      "master": "wrap-and-seal.svg"
+    },
+    {
+      "name": "carrier-artwork",
+      "width": 1000,
+      "height": 1250,
+      "title": "LizCraft cream carrier artwork with exact original contour and signature",
+      "kind": "original application artwork",
+      "master": "carrier-artwork.svg"
+    },
+    {
+      "name": "campaign-making",
+      "width": 1200,
+      "height": 1500,
+      "title": "LizCraft making campaign \u2014 a little time, a lot of care",
+      "kind": "original application artwork",
+      "master": "campaign-making.svg"
+    },
+    {
+      "name": "campaign-wearing",
+      "width": 1200,
+      "height": 1500,
+      "title": "LizCraft wearing campaign \u2014 made by hand, worn your way",
+      "kind": "original application artwork",
+      "master": "campaign-wearing.svg"
+    },
+    {
+      "name": "campaign-care",
+      "width": 1200,
+      "height": 1500,
+      "title": "LizCraft care campaign \u2014 keep the care going",
+      "kind": "original application artwork",
+      "master": "campaign-care.svg"
+    },
+    {
+      "name": "digital-stories",
+      "width": 1600,
+      "height": 1200,
+      "title": "LizCraft material-led digital story and personal parcel note",
+      "kind": "original application artwork",
+      "master": "digital-stories.svg"
+    },
+    {
+      "name": "project-cover",
+      "width": 1200,
+      "height": 1100,
+      "title": "LizCraft dedicated portfolio cover",
+      "kind": "original application artwork",
+      "master": "project-cover.svg"
+    },
+    {
+      "name": "making",
+      "width": 1536,
+      "height": 1024,
+      "title": "making",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "parcel-closed",
+      "width": 1536,
+      "height": 1024,
+      "title": "parcel-closed",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "parcel-open",
+      "width": 1536,
+      "height": 1024,
+      "title": "parcel-open",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "wearing",
+      "width": 1122,
+      "height": 1402,
+      "title": "wearing",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "woven-label",
+      "width": 1536,
+      "height": 1024,
+      "title": "woven-label",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "bags-blue-gold-mockup-original",
+      "width": 3500,
+      "height": 2300,
+      "title": "bags-blue-gold-mockup-original",
+      "kind": "original supplied application"
+    },
+    {
+      "name": "thank-you-front-original",
+      "width": 840,
+      "height": 596,
+      "title": "thank-you-front-original",
+      "kind": "original supplied application"
+    },
+    {
+      "name": "thank-you-back-original",
+      "width": 840,
+      "height": 596,
+      "title": "thank-you-back-original",
+      "kind": "original supplied application"
+    },
+    {
+      "name": "crochet-care-instructions-original",
+      "width": 840,
+      "height": 452,
+      "title": "crochet-care-instructions-original",
+      "kind": "original supplied application"
+    }
+  ],
+  "care_instructions": [
+    "Hand wash gently",
+    "Use mild soap",
+    "Do not bleach",
+    "Do not machine wash",
+    "Do not iron"
+  ]
+}
