@@ -54,7 +54,14 @@ def wrap(s,max_width,size,font='body'):
 def paragraph(s,x,y,max_width,size=23,c=INK,font='body',leading=1.55):
  ss=wrap(s,max_width,size,font);return lines(ss,x,y,size,c,font,leading),y+len(ss)*size*leading
 def img(path,x,y,w,h,fit='xMidYMid meet'):
- im=Image.open(path).convert('RGB');im.thumbnail((1800,1800),Image.Resampling.LANCZOS)
+ im=Image.open(path).convert('RGB')
+ if 'slice' in fit:
+  iw,ih=im.size;ratio=w/h
+  if iw/ih>ratio:
+   cw=ih*ratio;left=iw-cw if 'xMax' in fit else (iw-cw)/2;im=im.crop((left,0,left+cw,ih))
+  else:
+   ch=iw/ratio;im=im.crop((0,(ih-ch)/2,iw,(ih+ch)/2))
+ im.thumbnail((1800,1800),Image.Resampling.LANCZOS)
  buf=io.BytesIO();im.save(buf,format='JPEG',quality=94,optimize=True)
  return f'<image x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="{fit}" href="data:image/jpeg;base64,{b64encode(buf.getvalue()).decode()}"/>'
 def vector(name,x,y,w,colour=None,opacity=1):
@@ -169,10 +176,10 @@ a+=contour(540,720,780,BLUE)+text('Made by hand.',80,1045,50,BLUE,'italic')+text
 save('carrier-artwork',1000,1250,a,'LizCraft cream carrier artwork with exact original contour and signature')
 
 # Campaign art: three purposes, three compositions, one voice.
-a=rect(0,0,1200,1500,PAPER)+img(GEN/'making.png',0,400,1200,1100,'xMaxYMid slice')
+a=rect(0,0,1200,1500,PAPER)+img(GEN/'making-modern.png',0,400,1200,1100,'xMaxYMid slice')
 a+=logo(70,50,310)+text('A little time.',70,230,110,BLUE)+text('A lot of care.',70,340,110,BLUE,'italic')
 save('campaign-making',1200,1500,a,'LizCraft making campaign — a little time, a lot of care')
-a=img(GEN/'wearing.png',0,0,1200,1500,'xMidYMid slice')+rect(0,1130,1200,370,PAPER)
+a=img(GEN/'dress-modern.png',0,0,1200,1500,'xMidYMid slice')+rect(0,1130,1200,370,PAPER)
 a+=lines(['Made by hand.','Worn your way.'],65,1260,100,BLUE,'display',1.03)+logo(835,1400,300)
 save('campaign-wearing',1200,1500,a,'LizCraft wearing campaign — made by hand, worn your way')
 a=rect(0,0,1200,1500,BLUE)+logo(70,70,340,'horizontal',PAPER)+contour(390,-50,1100,GOLD,.62)
@@ -182,7 +189,7 @@ save('campaign-care',1200,1500,a,'LizCraft care campaign — keep the care going
 
 # Vertical digital compositions: a material-led story and a quiet note.
 a=rect(0,0,1600,1200,PAPER)+rect(65,65,700,1070,BLUE)
-a+=img(GEN/'making.png',65,65,700,700,'xMaxYMid slice')+logo(110,820,230,'horizontal',PAPER)
+a+=img(GEN/'making-modern.png',65,65,700,700,'xMaxYMid slice')+logo(110,820,230,'horizontal',PAPER)
 a+=lines(['Every stitch,','with intention.'],110,975,62,PAPER,'italic')
 a+=rect(835,65,700,1070,BLUE)+contour(1070,-120,720,GOLD,.55)+logo(890,115,230,'horizontal',PAPER)
 a+=lines(['Hello,','there’s care','in this parcel.'],890,650,74,PAPER,'display',1.07)
@@ -190,7 +197,7 @@ a+=text('A small thank-you, from LizCraft.',890,1035,23,PAPER,'body')
 save('digital-stories',1600,1200,a,'LizCraft material-led digital story and personal parcel note')
 
 # Near-square carousel cover: readable at the existing site's card proportions.
-a=rect(0,0,1200,1100,PAPER)+img(GEN/'wearing.png',490,0,710,1100,'xMidYMid slice')+logo(55,70,365)
+a=rect(0,0,1200,1100,PAPER)+img(GEN/'dress-modern.png',490,0,710,1100,'xMidYMid slice')+logo(55,70,365)
 a+=lines(['A little','time.'],55,420,103,BLUE)+lines(['A lot','of care.'],55,670,103,BLUE,'italic')
 a+=contour(-140,895,480,BLUE,.4)
 save('project-cover',1200,1100,a,'LizCraft dedicated portfolio cover')

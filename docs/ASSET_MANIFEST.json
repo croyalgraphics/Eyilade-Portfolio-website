@@ -344,5 +344,13 @@
       "lizcraft-cover-640.webp",
       "lizcraft-cover-1280.webp"
     ]
+  },
+  {
+    "asset": "purehive-cover",
+    "source_size": [
+      1200,
+      1100
+    ],
+    "source": "Original dedicated concept composition"
   }
 ]

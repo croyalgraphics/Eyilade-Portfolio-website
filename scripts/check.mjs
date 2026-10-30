@@ -87,7 +87,14 @@ const lizManifest=JSON.parse(await readFile(resolve(root,'assets/lizcraft/artwor
 for(const a of lizManifest.artworks)for(const size of [640,1280,1800])try{await access(resolve(root,'assets/lizcraft',`${a.name}-${size}.webp`));}catch{errors.push(`Missing LizCraft responsive export: ${a.name}-${size}`);}
 if((liz.match(/class="lc-contour-ring"/g)||[]).length!==8)errors.push('LizCraft must animate the eight actual original contour paths.');
 for(const text of ['Hand wash gently','Use mild soap','Do not bleach','Do not machine wash','Do not iron'])if(!liz.includes(`<li>${text}</li>`))errors.push(`LizCraft care instruction missing: ${text}`);
-if(!liz.includes('data-parcel-select="parcel-closed"')||!liz.includes('data-parcel-select="parcel-open"')||!liz.includes('AI-assisted visualisations'))errors.push('LizCraft parcel controls or truthful concept context missing.');
+if(!liz.includes('data-parcel-select="parcel-closed-modern"')||!liz.includes('data-parcel-select="parcel-open-modern"')||!liz.includes('AI-assisted visualisations'))errors.push('LizCraft parcel controls or truthful concept context missing.');
 if(files.some(p=>p.includes('/assets/lizcraft/')&&/sf.?compact/i.test(p)))errors.push('SF Compact may not be redistributed with the new LizCraft assets.');
+const pure=await readFile(resolve(root,'work/purehive/index.html'),'utf8');
+const pureManifest=JSON.parse(await readFile(resolve(root,'assets/purehive/artwork-manifest.json'),'utf8'));
+for(const a of pureManifest.artworks)for(const size of [640,1280,1800])try{await access(resolve(root,'assets/purehive',`${a.name}-${size}.webp`));}catch{errors.push(`Missing Pure Hive responsive export: ${a.name}-${size}`);}
+if(!pure.includes('AI-assisted visualisations with fictional models')||[0,1,2].some(i=>!pure.includes(`data-ph-scene-select="${i}"`)))throw Error('Pure Hive concept context or scene controls missing');
+for(const name of ['dress-modern','woman-modern','man-modern','family-modern','objects-modern','making-modern'])if(!liz.includes(`/assets/lizcraft/${name}-1280.webp`))throw Error(`Missing LizCraft human or collection scene: ${name}`);
+if(files.some(p=>p.includes('/assets/purehive/')&&/american.?typewriter/i.test(p)))throw Error('Apple font may not be redistributed');
+
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`PASS: ${pages.length} pages, ${links} internal references, 19 unique logo assets, image dimensions, page metadata and private-content boundary.`);

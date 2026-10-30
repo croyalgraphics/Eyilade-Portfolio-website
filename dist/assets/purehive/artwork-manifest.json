@@ -1,0 +1,116 @@
+{
+  "palette": [
+    "#FCEF91",
+    "#FB9E3A",
+    "#F97C00",
+    "#E6521F"
+  ],
+  "artworks": [
+    {
+      "name": "identity-study",
+      "width": 1600,
+      "height": 1050,
+      "kind": "original concept artwork",
+      "title": "Pure Hive exact original identity and four-colour palette"
+    },
+    {
+      "name": "label-system",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Pure Hive new label and gift sleeve face artwork"
+    },
+    {
+      "name": "lid-seals",
+      "width": 1500,
+      "height": 1000,
+      "kind": "original concept artwork",
+      "title": "Pure Hive circular lid seals with exact original mark"
+    },
+    {
+      "name": "gift-note",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Pure Hive gift sleeve and table note concept"
+    },
+    {
+      "name": "campaign-breakfast",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Pure Hive shared breakfast campaign concept"
+    },
+    {
+      "name": "campaign-tea",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Pure Hive everyday tea campaign concept"
+    },
+    {
+      "name": "campaign-pour",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Pure Hive honey pour campaign concept"
+    },
+    {
+      "name": "table-card",
+      "width": 1600,
+      "height": 1050,
+      "kind": "original concept artwork",
+      "title": "Pure Hive table card and food detail concept"
+    },
+    {
+      "name": "digital-stories",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Pure Hive vertical digital campaign story concepts"
+    },
+    {
+      "name": "project-cover",
+      "width": 1200,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Pure Hive dedicated portfolio cover"
+    },
+    {
+      "name": "breakfast-modern",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "gift-modern",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "jar-modern",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "pour-modern",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "tea-modern",
+      "width": 1122,
+      "height": 1402,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "jar-original",
+      "width": 4500,
+      "height": 4500,
+      "kind": "original supplied application"
+    }
+  ]
+}

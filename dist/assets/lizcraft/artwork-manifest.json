@@ -126,6 +126,27 @@
       "master": "project-cover.svg"
     },
     {
+      "name": "dress-modern",
+      "width": 1122,
+      "height": 1402,
+      "title": "dress-modern",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "family-modern",
+      "width": 1536,
+      "height": 1024,
+      "title": "family-modern",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "making-modern",
+      "width": 1448,
+      "height": 1086,
+      "title": "making-modern",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
       "name": "making",
       "width": 1536,
       "height": 1024,
@@ -133,10 +154,38 @@
       "kind": "AI-assisted concept visualisation"
     },
     {
+      "name": "man-modern",
+      "width": 1448,
+      "height": 1086,
+      "title": "man-modern",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "objects-modern",
+      "width": 1536,
+      "height": 1024,
+      "title": "objects-modern",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "parcel-closed-modern",
+      "width": 1536,
+      "height": 1024,
+      "title": "parcel-closed-modern",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
       "name": "parcel-closed",
       "width": 1536,
       "height": 1024,
       "title": "parcel-closed",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "parcel-open-modern",
+      "width": 1536,
+      "height": 1024,
+      "title": "parcel-open-modern",
       "kind": "AI-assisted concept visualisation"
     },
     {
@@ -151,6 +200,13 @@
       "width": 1122,
       "height": 1402,
       "title": "wearing",
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "woman-modern",
+      "width": 1122,
+      "height": 1402,
+      "title": "woman-modern",
       "kind": "AI-assisted concept visualisation"
     },
     {
