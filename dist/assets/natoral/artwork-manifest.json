@@ -1,0 +1,168 @@
+{
+  "palette": {
+    "green": "#006837",
+    "lime": "#8CC63F",
+    "grey": "#4D4D4D",
+    "mint": "#F3FFF8"
+  },
+  "artworks": [
+    {
+      "name": "identity-study",
+      "width": 1600,
+      "height": 1050,
+      "kind": "original concept artwork",
+      "title": "Exact original Natoral identity and verified source colours"
+    },
+    {
+      "name": "range-architecture",
+      "width": 1800,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Natoral body, hair, baby and active nutrition proposed range architecture"
+    },
+    {
+      "name": "body-faces",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Natoral body proposed product label faces"
+    },
+    {
+      "name": "hair-faces",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Natoral hair proposed product label faces"
+    },
+    {
+      "name": "baby-faces",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Natoral baby proposed product label faces"
+    },
+    {
+      "name": "active-faces",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Natoral active proposed product label faces"
+    },
+    {
+      "name": "pattern-study",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Original Natoral symbol used in a new supporting repeat study"
+    },
+    {
+      "name": "dispatch-details",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Natoral dispatch note and brand seal artwork"
+    },
+    {
+      "name": "type-study",
+      "width": 1600,
+      "height": 1050,
+      "kind": "original concept artwork",
+      "title": "Natoral original Cherry Bomb One and licensed Rubik supporting typography"
+    },
+    {
+      "name": "campaign-body",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Natoral body campaign concept"
+    },
+    {
+      "name": "campaign-hair",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Natoral hair campaign concept"
+    },
+    {
+      "name": "campaign-active",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Natoral active campaign concept"
+    },
+    {
+      "name": "digital-stories",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Natoral personal care and active nutrition digital story concepts"
+    },
+    {
+      "name": "project-cover",
+      "width": 1200,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Natoral dedicated portfolio product-family cover"
+    },
+    {
+      "name": "active-moment",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "active-range",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "baby-range",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "body-ritual",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "dispatch-set",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "family-lineup",
+      "width": 1902,
+      "height": 827,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "family-moment",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "hair-ritual",
+      "width": 1536,
+      "height": 1024,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "label-detail",
+      "width": 1122,
+      "height": 1402,
+      "kind": "AI-assisted concept visualisation"
+    },
+    {
+      "name": "original-usage",
+      "width": 1024,
+      "height": 1024,
+      "kind": "original supplied work"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "tool": "built-in image_gen",
+  "refinements": [
+    {
+      "name": "family-lineup.png",
+      "prompt": "Edit target is reference1, the full Natoral eight-product family photograph. Make exactly this label correction only: on the third product from left, Root Ritual Shampoo bottle, change the small category word BODY to HAIR. On the fourth product from left, Curl Veil Leave-in conditioner tube, change the small category word BODY to HAIR. Preserve every other pixel-like detail as closely as possible: all eight containers, exact original Natoral logos, names, descriptors, sizes, cream/lime/blush/lavender/blue/peach colours, hand, stone, perspective, daylight, shadows, background, crop and panoramic framing. No other text, claims, visual redesign or new objects. The word HAIR should be clean small dark-green uppercase sans-serif matching the previous category's scale and position.",
+      "output_hint": "Generated images are saved to /Users/joshuaoridamisi/.codex/generated_images/01a15a85-cb32-7272-bc90-b0699cf5fa09 as /Users/joshuaoridamisi/.codex/generated_images/01a15a85-cb32-7272-bc90-b0699cf5fa09/exec-c4ddda21-208d-4975-adbc-bd694ac2b8c8.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "name": "hair-ritual.png",
+      "prompt": "Edit target reference1 is the woman/hair photograph. Reference2 supplies the exact flat original artwork for the two hair labels. Change only the product-name typography on the bottle and tube: Root Ritual and Curl Veil must use the rounded bold Cherry Bomb One letterforms shown in reference2, matching the rest of Natoral range, not serif type. Keep the correctly spelled names, descriptor Shampoo and Leave-in conditioner, HAIR categories, units, exact master logo, all label colours/curves, containers, woman, hair, hands, bathroom, light and composition unchanged. Make both product names clear and legible at realistic printed scale; do not add claims or objects. Photorealistic printed labels, no new design.",
+      "output_hint": "Generated images are saved to /Users/joshuaoridamisi/.codex/generated_images/01a15a85-cb32-7272-bc90-b0699cf5fa09 as /Users/joshuaoridamisi/.codex/generated_images/01a15a85-cb32-7272-bc90-b0699cf5fa09/exec-62d84729-ac51-4022-803d-04b7e0c3131d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}

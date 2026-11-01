@@ -103,6 +103,12 @@ if(!feasts.includes('Professional catering')||!feasts.includes('fictional models
 if((feasts.match(/class="ff-rosette-part"/g)||[]).length!==8)errors.push('Feasts must preserve the eight original rosette paths.');
 if(/09076468999|fast delivery|healthy|nutritiously/i.test(feasts))errors.push('Unverified business claims or old ordering number in new Feasts case.');
 if(files.some(p=>p.includes('/assets/feasts/')&&/funky.?bird.*\.(ttf|otf|woff2?)$/i.test(p)))errors.push('Personal-use Funky Bird font may not be redistributed.');
+const natoral=await readFile(resolve(root,'work/natoral/index.html'),'utf8');
+const natoralManifest=JSON.parse(await readFile(resolve(root,'assets/natoral/artwork-manifest.json'),'utf8'));
+for(const a of natoralManifest.artworks)for(const size of [640,1280,1800])try{await access(resolve(root,'assets/natoral',`${a.name}-${size}.webp`));}catch{errors.push(`Missing Natoral responsive export: ${a.name}-${size}`);}
+for(const name of ['Dewskin','Softmelt','Root Ritual','Curl Veil','First Spoon','Little Drops','Form Daily'])if(!natoral.includes(name))errors.push(`Natoral proposed product name missing: ${name}`);
+for(const range of ['body','hair','baby','active'])if(!natoral.includes(`data-nt-range-select="${range}"`))errors.push(`Natoral range control missing: ${range}`);
+if(!natoral.includes('proposed concepts')||!natoral.includes('fictional models')||!natoral.includes('data-nt-view-select="artwork"'))errors.push('Natoral concept context or artwork view missing.');
 
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log(`PASS: ${pages.length} pages, ${links} internal references, 19 unique logo assets, image dimensions, page metadata and private-content boundary.`);
