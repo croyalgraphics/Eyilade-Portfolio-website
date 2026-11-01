@@ -1,0 +1,324 @@
+{
+  "revision": "owner-supplied-N1-N8",
+  "sources": [
+    {
+      "file": "N1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        19,
+        14,
+        1216,
+        1239
+      ],
+      "sha256": "48d7ab862b71decbe7e59832fadd134961fe68c6704205353f1ed759bb12fa66"
+    },
+    {
+      "file": "N2.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        41,
+        13,
+        1224,
+        1254
+      ],
+      "sha256": "a2ae0eca7066e0e148e201cc9a911b20089850c0a4a578b8bfd4a28791c588f2"
+    },
+    {
+      "file": "N3.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        31,
+        16,
+        1236,
+        1254
+      ],
+      "sha256": "df9f3ae26aab4337dbcfd877f9e3df0aecdab6983a949519581d67ae4d7839fa"
+    },
+    {
+      "file": "N4.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        27,
+        21,
+        1174,
+        1254
+      ],
+      "sha256": "ce3c4a9a8f7a944a8ad35e9e4e907f1bcaad6d185c7693d5942eb93e065367cd"
+    },
+    {
+      "file": "N5.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        1240,
+        1240
+      ],
+      "sha256": "4f1520735b3aba5a56175a4a1a7c2b81f52e9a4ff217fa95e0266522863be5e5"
+    },
+    {
+      "file": "N6.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        1226,
+        1254
+      ],
+      "sha256": "202f9ad9ecd71c7185696476b37d1f0cc6367c9e50a9f5cbc5f4616e34139d07"
+    },
+    {
+      "file": "N7.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        14,
+        1253,
+        1254
+      ],
+      "sha256": "c30d38c4e201eee335d2a48a38a064d263344185b6b1b0e66a4905007caf2f0c"
+    },
+    {
+      "file": "N8.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        6,
+        1240,
+        1254
+      ],
+      "sha256": "40ec559f39d548119902a2c1ed4367071c65c9f28b529fc777630cd79036003b"
+    }
+  ],
+  "artworks": [
+    {
+      "name": "body-faces",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Dewskin / Softmelt supplied packaging artwork"
+    },
+    {
+      "name": "hair-faces",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Root Ritual / Curl Veil supplied packaging artwork"
+    },
+    {
+      "name": "baby-faces",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "First Spoon / Little Drops supplied packaging artwork"
+    },
+    {
+      "name": "active-faces",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Form Daily / Vanilla & Cocoa supplied packaging artwork"
+    },
+    {
+      "name": "body-ritual",
+      "width": 1536,
+      "height": 1024,
+      "kind": "original concept artwork",
+      "title": "Supplied Dewskin and Softmelt packaging in a fictional contemporary body-care scene"
+    },
+    {
+      "name": "hair-ritual",
+      "width": 1536,
+      "height": 1024,
+      "kind": "original concept artwork",
+      "title": "Supplied Root Ritual and Curl Veil packaging in a fictional contemporary haircare scene"
+    },
+    {
+      "name": "active-moment",
+      "width": 1536,
+      "height": 1024,
+      "kind": "original concept artwork",
+      "title": "Supplied Form Daily tubs in a fictional gym scene"
+    },
+    {
+      "name": "family-moment",
+      "width": 1536,
+      "height": 1024,
+      "kind": "original concept artwork",
+      "title": "Supplied First Spoon carton in a fictional modern family scene"
+    },
+    {
+      "name": "dispatch-set",
+      "width": 1536,
+      "height": 1024,
+      "kind": "original concept artwork",
+      "title": "Supplied body-care packaging beside a burgundy mailer in a fictional unboxing scene"
+    },
+    {
+      "name": "baby-range",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Supplied First Spoon and Little Drops packaging in a studio arrangement"
+    },
+    {
+      "name": "active-range",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Supplied Form Daily Vanilla and Cocoa tubs in a studio arrangement"
+    },
+    {
+      "name": "label-detail",
+      "width": 1000,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Close-up of the exact supplied Dewskin packaging"
+    },
+    {
+      "name": "family-lineup",
+      "width": 2400,
+      "height": 1000,
+      "kind": "original concept artwork",
+      "title": "All eight designer-supplied Natoral products together"
+    },
+    {
+      "name": "identity-study",
+      "width": 1600,
+      "height": 1050,
+      "kind": "original concept artwork"
+    },
+    {
+      "name": "pattern-study",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork"
+    },
+    {
+      "name": "range-architecture",
+      "width": 1800,
+      "height": 1550,
+      "kind": "original concept artwork",
+      "title": "Supplied body hair baby and active nutrition packaging architecture"
+    },
+    {
+      "name": "type-study",
+      "width": 1800,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Supplied product lettering hierarchy and label illustrations"
+    },
+    {
+      "name": "dispatch-details",
+      "width": 1600,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Body-care thank-you note concept alongside the supplied Dewskin pack"
+    },
+    {
+      "name": "campaign-body",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Body-care campaign with the supplied Dewskin and Softmelt designs"
+    },
+    {
+      "name": "campaign-hair",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Haircare campaign with supplied Root Ritual and Curl Veil designs"
+    },
+    {
+      "name": "campaign-active",
+      "width": 1200,
+      "height": 1500,
+      "kind": "original concept artwork",
+      "title": "Active nutrition campaign with the supplied Form Daily packaging"
+    },
+    {
+      "name": "digital-stories",
+      "width": 1600,
+      "height": 1200,
+      "kind": "original concept artwork",
+      "title": "Body and fitness digital compositions featuring supplied product artwork"
+    },
+    {
+      "name": "project-cover",
+      "width": 1200,
+      "height": 1100,
+      "kind": "original concept artwork",
+      "title": "Natoral portfolio cover featuring all eight supplied product designs"
+    },
+    {
+      "name": "original-usage",
+      "width": 1024,
+      "height": 1024,
+      "kind": "original supplied work"
+    }
+  ]
+}

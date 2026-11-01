@@ -13,3 +13,20 @@
 @media(max-width:360px){.nt-project-bar>p{max-width:180px}.nt-hero-top{padding-block:22px;gap:20px}.nt-hero-line{font-size:27px}.nt-story-link{font-size:9px}.nt-hero-image img{height:170px}.nt-hero-note{font-size:8px}.nt-range-choices{gap:24px}.nt-range-choices button{font-size:13px}.nt-range-copy{padding:23px}.nt-overview dl{grid-template-columns:1fr}.nt-overview dl>div:last-child{grid-column:auto}.nt-range-copy h3{font-size:33px}}
 @media(prefers-reduced-motion:reduce){.nt-hero-top>*,.nt-range-frame{animation:none!important}.nt-reveal{opacity:1!important;transform:none!important;transition:none!important}.nt-mark-art{transform:none!important;will-change:auto}.nt-art img{transition:none}.nt-art .image-zoom:hover img{transform:none}}
 @media(min-width:701px){.nt-hero-image img{max-height:clamp(280px,calc(100svh - 480px),520px)}}
+
+/* The project chrome stays rooted in the original identity. The categories have
+   independent surfaces and type, matching their physical packaging. */
+.nt-range-body .nt-range-copy{background:#f4ded9;color:#512039}
+.nt-range-body .nt-range-copy h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.045em}
+.nt-range-hair .nt-range-copy{background:#123fa5;color:#fff}
+.nt-range-hair .nt-range-copy h3{font-family:NatoralRubik,Arial,sans-serif;text-transform:uppercase;font-weight:800;letter-spacing:-.045em}
+.nt-range-baby .nt-range-copy{background:#fff1d4;color:#924030}
+.nt-range-active .nt-range-copy{background:#101214;color:#fff}
+.nt-range-active .nt-range-copy h3{font-family:Arial,sans-serif;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.055em}
+.nt-range-body .nt-range-copy .nt-descriptor{color:#512039}
+.nt-range-baby .nt-range-copy .nt-descriptor{color:#924030}
+.nt-range-hair .nt-range-copy .nt-descriptor,.nt-range-active .nt-range-copy .nt-descriptor{color:#f8d632}
+.nt-range-hair .nt-range-copy>p:not(.nt-range-count):not(.nt-descriptor),.nt-range-active .nt-range-copy>p:not(.nt-range-count):not(.nt-descriptor){color:#f1f3f4}
+.nt-hero-image{background:#f5f2ed}
+.nt-hero-image .image-zoom{display:block;width:100%;padding:0;background:transparent;border-radius:0;overflow:hidden}
+.nt-hero-image img{width:100%;height:auto;max-height:none;aspect-ratio:12/5;object-fit:contain}
